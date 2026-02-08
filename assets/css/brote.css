@@ -23,7 +23,7 @@
   --brote-gray-rgb: 123, 125, 131;
   --brote-white: #ffffff;
   --brote-white-rgb: 255, 255, 255;
-  --brote-base: #22badf;
+  --brote-base: #0e37b1;
   --brote-base-rgb: 18, 57, 172;
   --brote-primary: #c2afe3;
   --brote-primary-rgb: 255, 180, 0;
@@ -388,7 +388,7 @@ ul {
   animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  background-image: url(../images/loader.png);
+  background-image: url(../images/logo.jpeg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 60px auto;
@@ -10592,7 +10592,7 @@ ul {
 .testimonial-carousel-page {
   position: relative;
   display: block;
-  padding: 120px 0 232px;
+  padding: 100px 0 100px;
 }
 
 .testimonial-carousel-page__carousel.owl-carousel .owl-dots {
@@ -10950,7 +10950,7 @@ ul {
 .portfolio-carousel-page {
   position: relative;
   display: block;
-  padding: 120px 0 230px;
+  padding: 100px 0 100px;
 }
 
 .portfolio-carousel-page__carousel.owl-carousel .owl-dots {
