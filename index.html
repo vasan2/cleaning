@@ -47,28 +47,28 @@
     <link rel="stylesheet" href="assets/css/brote.css" />
     <link rel="stylesheet" href="assets/css/brote-responsive.css" />
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <script>
-$(document).ready(function () {
-    // Initialize Owl Carousel
-    $('.video-carousel').owlCarousel({
-        items: 2,
-        loop: true,
-        dots: true,
-        nav: false
-    });
+        $(document).ready(function () {
+            // Initialize Owl Carousel
+            $('.video-carousel').owlCarousel({
+                items: 2,
+                loop: true,
+                dots: true,
+                nav: false
+            });
 
-    // Modal elements
-    const $modal = $('#video-modal');
-    const $wrapper = $('#video-wrapper');
-    const $close = $('#close-modal');
+            // Modal elements
+            const $modal = $('#video-modal');
+            const $wrapper = $('#video-wrapper');
+            const $close = $('#close-modal');
 
-    // Play button click → open modal
-    $('.video-item .video-thumb').on('click', function () {
-        const videoId = $(this).parent().data('video');
+            // Play button click → open modal
+            $('.video-item .video-thumb').on('click', function () {
+                const videoId = $(this).parent().data('video');
 
-        const iframe = `
+                const iframe = `
             <iframe 
                 src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1"
                 frameborder="0"
@@ -77,218 +77,232 @@ $(document).ready(function () {
             </iframe>
         `;
 
-        $wrapper.html(iframe);
-        $modal.css('display', 'flex');
-    });
+                $wrapper.html(iframe);
+                $modal.css('display', 'flex');
+            });
 
-    // Close modal
-    $close.on('click', function () {
-        $wrapper.html(''); // remove iframe to stop video
-        $modal.hide();
-    });
+            // Close modal
+            $close.on('click', function () {
+                $wrapper.html(''); // remove iframe to stop video
+                $modal.hide();
+            });
 
-    // Close modal on background click
-    $modal.on('click', function (e) {
-        if (e.target === this) {
-            $wrapper.html('');
-            $modal.hide();
-        }
-    });
-});
-</script>
+            // Close modal on background click
+            $modal.on('click', function (e) {
+                if (e.target === this) {
+                    $wrapper.html('');
+                    $modal.hide();
+                }
+            });
+        });
+    </script>
     <style>
-        br{
+        br {
             display: block !important;
         }
-.video-thumb {
-    position: relative;
-    cursor: pointer;
-}
-.video-thumb img {
-    width: 100%;
-    display: block;
-}
-.play-btn {
-    position: absolute;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    font-size: 64px;
-    color: #fff;
-    background: rgba(0,0,0,.4);
-}
 
-/* Modal Styles */
-#video-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-#video-modal-content {
-    position: relative;
-    width: 80%;
-    max-width: 900px;
-}
-#video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-}
-#video-wrapper iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-}
-#close-modal {
-    position: absolute;
-    top: -30px;
-    right: 0;
-    font-size: 30px;
-    color: #fff;
-    cursor: pointer;
-}
+        .video-thumb {
+            position: relative;
+            cursor: pointer;
+        }
 
-/* HERO SECTION */
-.before-after-hero {
-  position: relative;
-  height: 320px;
-  background: #3b82f6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-}
+        .video-thumb img {
+            width: 100%;
+            display: block;
+        }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(59, 130, 246, 0.85);
-}
+        .play-btn {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            font-size: 64px;
+            color: #fff;
+            background: rgba(0, 0, 0, .4);
+        }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-}
+        /* Modal Styles */
+        #video-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .8);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
 
-.hero-subtitle {
-  font-size: 14px;
-  letter-spacing: 2px;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
+        #video-modal-content {
+            position: relative;
+            width: 80%;
+            max-width: 900px;
+        }
 
-.hero-title {
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 800;
-  color:white;
-}
+        #video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
 
-/* SLIDER SECTION */
-.comparison-section {
-  position: relative;
-  margin-top: -80px;
-  padding-bottom: 80px;
-}
+        #video-wrapper iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
 
-.comparison-card {
-  max-width: 1200px;
-  margin: 0 auto;
-  background: white;
-  border-radius: 24px;
-  padding: 24px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.25);
-}
+        #close-modal {
+            position: absolute;
+            top: -30px;
+            right: 0;
+            font-size: 30px;
+            color: #fff;
+            cursor: pointer;
+        }
 
-/* IMAGE COMPARISON */
-.before-after-container {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  border-radius: 16px;
-  overflow: hidden;
-}
+        /* HERO SECTION */
+        .before-after-hero {
+            position: relative;
+            height: 320px;
+            background: #3b82f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
 
-.image {
-  position: relative;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(59, 130, 246, 0.85);
+        }
 
-/* Before image stays static */
-.before-image {
-  position: static;
-}
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
 
-.after-image-wrapper {
-  position: absolute;
-  inset: 0;
-  width: 50%;
-  overflow: hidden;
-  transition: width 0.2s ease;
-}
+        .hero-subtitle {
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
 
-/* SLIDER */
-.slider {
-  position: absolute;
-  inset: 0;
-  appearance: none;
-  background: transparent;
-  cursor: ew-resize;
-  z-index: 5;
-}
+        .hero-title {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 800;
+            color: white;
+        }
 
-.slider::-webkit-slider-thumb {
-  appearance: none;
-  width: 52px;
-  height: 52px;
-  background: #2563eb;
-  border-radius: 50%;
-  border: 4px solid #fff;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
+        /* SLIDER SECTION */
+        .comparison-section {
+            position: relative;
+            margin-top: -80px;
+            padding-bottom: 80px;
+        }
 
-.slider::-moz-range-thumb {
-  width: 52px;
-  height: 52px;
-  background: #2563eb;
-  border-radius: 50%;
-  border: 4px solid #fff;
-}
+        .comparison-card {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+        }
 
-.label {
-  position: absolute;
-  top: 20px;
-  padding: 8px 18px;
-  background: #2563eb;
-  color: white;
-  font-weight: 600;
-  border-radius: 999px;
-  z-index: 6;
-}
+        /* IMAGE COMPARISON */
+        .before-after-container {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            border-radius: 16px;
+            overflow: hidden;
+        }
 
-.before-label { right: 20px; }
-.after-label { left: 20px; }
+        .image {
+            position: relative;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.icon {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-}
-.icon-whatsapp {
-  width: 0.857421875em;
-}
-.whatsapp-float {
+        /* Before image stays static */
+        .before-image {
+            position: static;
+        }
+
+        .after-image-wrapper {
+            position: absolute;
+            inset: 0;
+            width: 50%;
+            overflow: hidden;
+            transition: width 0.2s ease;
+        }
+
+        /* SLIDER */
+        .slider {
+            position: absolute;
+            inset: 0;
+            appearance: none;
+            background: transparent;
+            cursor: ew-resize;
+            z-index: 5;
+        }
+
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 52px;
+            height: 52px;
+            background: #2563eb;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .slider::-moz-range-thumb {
+            width: 52px;
+            height: 52px;
+            background: #2563eb;
+            border-radius: 50%;
+            border: 4px solid #fff;
+        }
+
+        .label {
+            position: absolute;
+            top: 20px;
+            padding: 8px 18px;
+            background: #2563eb;
+            color: white;
+            font-weight: 600;
+            border-radius: 999px;
+            z-index: 6;
+        }
+
+        .before-label {
+            right: 20px;
+        }
+
+        .after-label {
+            left: 20px;
+        }
+
+        .icon {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            stroke-width: 0;
+            stroke: currentColor;
+            fill: currentColor;
+        }
+
+        .icon-whatsapp {
+            width: 0.857421875em;
+        }
+
+        .whatsapp-float {
             position: fixed;
             right: 1px;
             top: 50%;
@@ -302,30 +316,35 @@ $(document).ready(function () {
             font-size: 32px;
             line-height: 60px;
             z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             cursor: pointer;
         }
 
-        .whatsapp-float:hover,.main-menu-two__call-icon,.main-menu-two__call-icon:hover {
+        .whatsapp-float:hover,
+        .main-menu-two__call-icon,
+        .main-menu-two__call-icon:hover {
             background-color: #20b858;
         }
-        body{
+
+        body {
             overflow-x: hidden;
         }
-        .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-    overflow: hidden;
-}
 
-.video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 
 </head>
@@ -343,12 +362,7 @@ $(document).ready(function () {
     <!-- /.preloader -->
 
 
-<a 
-        href="https://wa.me/+971521451348" 
-        target="_blank" 
-        class="whatsapp-float"
-        aria-label="Chat on WhatsApp"
-    >
+    <a href="https://wa.me/+971521451348" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -375,11 +389,11 @@ $(document).ready(function () {
                                         <p><a href="mailto:brote@company.com">brote@company.com</a></p>
                                     </div>
                                 </li>
-                                
+
                             </ul>
                         </div>
                         <div class="main-header-two__top-social">
-                            
+
                             <a href="#"><i class="fab fa-facebook"></i></a>
                             <a href="#"><i class="fab fa-youtube"></i></a>
                             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -393,14 +407,14 @@ $(document).ready(function () {
                         <div class="main-menu-two__wrapper-inner clearfix">
                             <div class="main-menu-two__left">
                                 <div class="main-menu-two__logo">
-                                    <a href="index.html"><img src="assets/logo.png" style="width:220px"alt=""></a>
+                                    <a href="index.html"><img src="assets/logo.png" style="width:220px" alt=""></a>
                                 </div>
                                 <div class="main-menu-two__main-menu-box">
                                     <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                     <ul class="main-menu__list">
                                         <li class=" current ">
                                             <a href="index.html">Home </a>
-                                            
+
                                         </li>
                                         <li>
                                             <a href="#">About Us </a>
@@ -408,7 +422,7 @@ $(document).ready(function () {
                                         <li class="dropdown">
                                             <a href="#">Services </a>
                                             <ul>
-                                               
+
                                                 <li><a href="#">Services Carousel</a></li>
                                                 <li><a href="#">Plumbing Services</a></li>
                                                 <li><a href="#">Laundry Services</a></li>
@@ -418,28 +432,32 @@ $(document).ready(function () {
                                                 <li><a href="#">Toilet Cleaning</a></li>
                                             </ul>
                                         </li>
-                                        
+
                                         <li><a href="#">FAQs</a></li>
-                                                
-                                        
-                                        
+
+
+
                                         <li><a href="#">Contact</a></li>
-                                                
+
                                     </ul>
                                 </div>
                             </div>
                             <div class="main-menu-two__right">
                                 <div class="main-menu-two__search-call">
-                                    
+
                                     <div class="main-menu-two__call">
                                         <div class="main-menu-two__call-icon">
-                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28">
-<path d="M15.391 15.219c0.266 0 2.812 1.328 2.922 1.516 0.031 0.078 0.031 0.172 0.031 0.234 0 0.391-0.125 0.828-0.266 1.188-0.359 0.875-1.813 1.437-2.703 1.437-0.75 0-2.297-0.656-2.969-0.969-2.234-1.016-3.625-2.75-4.969-4.734-0.594-0.875-1.125-1.953-1.109-3.031v-0.125c0.031-1.031 0.406-1.766 1.156-2.469 0.234-0.219 0.484-0.344 0.812-0.344 0.187 0 0.375 0.047 0.578 0.047 0.422 0 0.5 0.125 0.656 0.531 0.109 0.266 0.906 2.391 0.906 2.547 0 0.594-1.078 1.266-1.078 1.625 0 0.078 0.031 0.156 0.078 0.234 0.344 0.734 1 1.578 1.594 2.141 0.719 0.688 1.484 1.141 2.359 1.578 0.109 0.063 0.219 0.109 0.344 0.109 0.469 0 1.25-1.516 1.656-1.516zM12.219 23.5c5.406 0 9.812-4.406 9.812-9.812s-4.406-9.812-9.812-9.812-9.812 4.406-9.812 9.812c0 2.063 0.656 4.078 1.875 5.75l-1.234 3.641 3.781-1.203c1.594 1.047 3.484 1.625 5.391 1.625zM12.219 1.906c6.5 0 11.781 5.281 11.781 11.781s-5.281 11.781-11.781 11.781c-1.984 0-3.953-0.5-5.703-1.469l-6.516 2.094 2.125-6.328c-1.109-1.828-1.687-3.938-1.687-6.078 0-6.5 5.281-11.781 11.781-11.781z"></path>
-</svg>
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="28"
+                                                viewBox="0 0 24 28">
+                                                <path
+                                                    d="M15.391 15.219c0.266 0 2.812 1.328 2.922 1.516 0.031 0.078 0.031 0.172 0.031 0.234 0 0.391-0.125 0.828-0.266 1.188-0.359 0.875-1.813 1.437-2.703 1.437-0.75 0-2.297-0.656-2.969-0.969-2.234-1.016-3.625-2.75-4.969-4.734-0.594-0.875-1.125-1.953-1.109-3.031v-0.125c0.031-1.031 0.406-1.766 1.156-2.469 0.234-0.219 0.484-0.344 0.812-0.344 0.187 0 0.375 0.047 0.578 0.047 0.422 0 0.5 0.125 0.656 0.531 0.109 0.266 0.906 2.391 0.906 2.547 0 0.594-1.078 1.266-1.078 1.625 0 0.078 0.031 0.156 0.078 0.234 0.344 0.734 1 1.578 1.594 2.141 0.719 0.688 1.484 1.141 2.359 1.578 0.109 0.063 0.219 0.109 0.344 0.109 0.469 0 1.25-1.516 1.656-1.516zM12.219 23.5c5.406 0 9.812-4.406 9.812-9.812s-4.406-9.812-9.812-9.812-9.812 4.406-9.812 9.812c0 2.063 0.656 4.078 1.875 5.75l-1.234 3.641 3.781-1.203c1.594 1.047 3.484 1.625 5.391 1.625zM12.219 1.906c6.5 0 11.781 5.281 11.781 11.781s-5.281 11.781-11.781 11.781c-1.984 0-3.953-0.5-5.703-1.469l-6.516 2.094 2.125-6.328c-1.109-1.828-1.687-3.938-1.687-6.078 0-6.5 5.281-11.781 11.781-11.781z">
+                                                </path>
+                                            </svg>
                                         </div>
                                         <div class="main-menu-two__call-content">
                                             <p class="main-menu-two__call-sub-title">Book Now</p>
-                                            <h4 class="main-menu-two__call-number"><a href="wa.link/vqlzoa">+971 52 145 1348</a></h4>
+                                            <h4 class="main-menu-two__call-number"><a href="wa.link/vqlzoa">+971 52 145
+                                                    1348</a></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -475,7 +493,8 @@ $(document).ready(function () {
                     <div class="swiper-slide">
                         <div class="main-slider-two-bg-box">
                             <div class="main-slider-two-image-layer"
-                                style="background-image: url(https://bracketweb.com/brotewp/wp-content/uploads/2022/06/main-slider-2-2.jpg);"></div>
+                                style="background-image: url(https://bracketweb.com/brotewp/wp-content/uploads/2022/06/main-slider-2-2.jpg);">
+                            </div>
 
                             <div class="main-slider-two-shape-box">
                                 <div class="main-slider-two-shape-1"
@@ -512,9 +531,13 @@ $(document).ready(function () {
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="main-slider-two__content">
-                                        <p class="main-slider-two__sub-title">We’re Best Cleaning Company</p>
-                                        <h2 class="main-slider-two__title">Holiday Home <br>Cleaning Dubai</h2>
-                                        <p class="main-slider-two__text" style="text-wrap: wrap;white-space: wrap;">Professional Filipino Cleaning Team <br> Specifically Trained for Airbnb Cleaning </p>
+                                        <p class="main-slider-two__sub-title">We’re The No.1</p>
+                                        <h2 class="main-slider-two__title">Holiday Homes Cleaning <br>Company in Dubai
+                                        </h2>
+                                        <p class="main-slider-two__text" style="text-wrap: wrap;white-space: wrap;">
+                                            Setting the standard for exceptional <br>cleanliness in short-term
+                                            rentals.<br>
+                                        </p>
                                         <div class="main-slider-two__btn-box">
                                             <a href="#" class="thm-btn main-slider-two__btn">Discover more <i
                                                     class="fa fa-angle-right"></i></a>
@@ -525,158 +548,196 @@ $(document).ready(function () {
                         </div>
                     </div>
 
-                    
 
-                    
-                    </div>
+
 
                 </div>
 
-                <!-- If we need navigation buttons -->
+            </div>
 
-            </div>
-        </section>
-        <!--Main Slider End-->
+            <!-- If we need navigation buttons -->
 
-        <!--Feature Two Start-->
-        <section class="feature-two">
-            <div class="container">
-                <div class="row">
-                    <!--Feature Two Single Start-->
-                    <div class="col-xl-4 wow fadeInLeft" data-wow-delay="100ms">
-                        <div class="feature-two__single">
-                            <div class="feature-two__icon">
-                                <img src="assets/images/icon/feature-one-icon-1.png" alt="">
-                            </div>
-                            <div class="feature-two__content">
-                                <h3 class="feature-two__title"><a href="#">Outdoor Service</a></h3>
-                                <p class="feature-two__text">Professional outdoor maintenance to keep your surroundings clean and inviting.</p>
-                            </div>
-                            <div class="feature-two__star-1">
-                                <img src="assets/images/shapes/feature-two-star-1.png" alt="">
-                            </div>
-                            <div class="feature-two__star-2">
-                                <img src="assets/images/shapes/feature-two-star-2.png" alt="">
-                            </div>
-                            <div class="feature-two__star-3">
-                                <img src="assets/images/shapes/feature-two-star-3.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <!--Feature Two Single End-->
-                    <!--Feature Two Single Start-->
-                    <div class="col-xl-4 wow fadeInLeft" data-wow-delay="200ms">
-                        <div class="feature-two__single">
-                            <div class="feature-two__icon">
-                                <img src="assets/images/icon/feature-one-icon-2.png" alt="">
-                            </div>
-                            <div class="feature-two__content">
-                                <h3 class="feature-two__title"><a href="#">House Cleaning</a></h3>
-                                <p class="feature-two__text">Reliable home cleaning for a fresh, healthy living space.</p>
-                            </div>
-                            <div class="feature-two__star-1">
-                                <img src="assets/images/shapes/feature-two-star-1.png" alt="">
-                            </div>
-                            <div class="feature-two__star-2">
-                                <img src="assets/images/shapes/feature-two-star-2.png" alt="">
-                            </div>
-                            <div class="feature-two__star-3">
-                                <img src="assets/images/shapes/feature-two-star-3.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <!--Feature Two Single End-->
-                    <!--Feature Two Single Start-->
-                    <div class="col-xl-4 wow fadeInLeft" data-wow-delay="300ms">
-                        <div class="feature-two__single">
-                            <div class="feature-two__icon">
-                                <img src="assets/images/icon/feature-one-icon-3.png" alt="">
-                            </div>
-                            <div class="feature-two__content">
-                                <h3 class="feature-two__title"><a href="#">Plumber Service</a></h3>
-                                <p class="feature-two__text">Expert plumbing solutions for leaks, clogs, and repairs.</p>
-                            </div>
-                            <div class="feature-two__star-1">
-                                <img src="assets/images/shapes/feature-two-star-1.png" alt="">
-                            </div>
-                            <div class="feature-two__star-2">
-                                <img src="assets/images/shapes/feature-two-star-2.png" alt="">
-                            </div>
-                            <div class="feature-two__star-3">
-                                <img src="assets/images/shapes/feature-two-star-3.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <!--Feature Two Single End-->
-                </div>
-            </div>
-        </section>
+    </div>
+    </section>
+    <!--Main Slider End-->
 
-        <section class="why-choose-one">
-            <div class="why-choose-one-shape-1"
-                style="background-image: url(https://bracketweb.com/brotewp/wp-content/uploads/2022/06/why-choose-one-shape-1.png);"></div>
-            <div class="why-choose-one__img">
-                <img src="	https://bracketweb.com/brotewp/wp-content/uploads/2022/06/why-choose-one-img-1.png" alt="">
-            </div>
-            <div class="why-choose-one-bubble-1">
-                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/why-choose-bubble-1.png" alt="">
-            </div>
-            <div class="why-choose-one-bubble-2">
-                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/why-choose-bubble-2.png" alt="">
-            </div>
-            <div class="why-choose-one-bubble-3">
-                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/why-choose-bubble-3.png" alt="">
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6">
-                        <div class="why-choosee-one__left">
-                            <div class="why-choose-one__img-2">
-                                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/why-choose-one-img-2.jpg" alt="">
-                            </div>
-                            <div class="why-choose-one__img-3">
-                                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/why-choose-one-img-3.jpg" alt="">
-                            </div>
+    <!--Feature Two Start-->
+    <section class="feature-two">
+        <div class="container">
+            <div class="row">
+                <!--Feature Two Single Start-->
+                <div class="col-xl-6 wow fadeInLeft" data-wow-delay="100ms">
+                    <div class="feature-two__single">
+                        <div class="feature-two__icon">
+                            <img src="assets/images/icon/feature-one-icon-1.png" alt="">
                         </div>
-                    </div>
-                    <div class="col-xl-6">
-                        <div class="why-choose-one__right">
-                            <div class="section-title text-left">
-                                <span class="section-title__tagline">Why Should Choose Us</span>
-                                <h2 class="section-title__title">Holiday Home Cleaning Needs?
-                                </h2>
-                            </div>
-                            <ul class="list-unstyled why-choose-one__points">
-                                <li>
-                                    <div class="icon">
-                                        <span class="icon-checked"></span>
-                                    </div>
-                                    <div class="text">
-                                        <h4>Expert Filipino Cleaners</h4>
-                                        <p>Entrust your holiday home to our skilled Filipino cleaning professionals. With specialised training in holiday home and Airbnb cleanings, our team ensures your apartment is consistently guest-ready.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <span class="icon-checked"></span>
-                                    </div>
-                                    <div class="text">
-                                        <h4>Years of Holiday Home Experience</h4>
-                                        <p>Benefit from our management team’s extensive experience in holiday home management. We know exactly what it’s like to be in your shoes therefore how to provide the best service.</p>
-                                    </div>
-                                </li>
-
-                                
-                            </ul>
+                        <div class="feature-two__content">
+                            <h3 class="feature-two__title"><a href="#">Deep & Detailed Cleaning</a></h3>
+                            <p class="feature-two__text">Our expert team delivers hotel-standard cleaning with unmatched
+                                attention to detail. From sparkling bathrooms to dust-free corners, every inch of your
+                                holiday home is thoroughly cleaned, sanitized, and perfectly presented for incoming
+                                guests.</p>
+                        </div>
+                        <div class="feature-two__star-1">
+                            <img src="assets/images/shapes/feature-two-star-1.png" alt="">
+                        </div>
+                        <div class="feature-two__star-2">
+                            <img src="assets/images/shapes/feature-two-star-2.png" alt="">
+                        </div>
+                        <div class="feature-two__star-3">
+                            <img src="assets/images/shapes/feature-two-star-3.png" alt="">
                         </div>
                     </div>
                 </div>
+                <!--Feature Two Single End-->
+                <!--Feature Two Single Start-->
+                <div class="col-xl-6 wow fadeInLeft" data-wow-delay="200ms">
+                    <div class="feature-two__single">
+                        <div class="feature-two__icon">
+                            <img src="assets/images/icon/feature-one-icon-2.png" alt="">
+                        </div>
+                        <div class="feature-two__content">
+                            <h3 class="feature-two__title"><a href="#">Linen Hire & Laundry Services</a></h3>
+                            <p class="feature-two__text">Enjoy hassle-free linen solutions with our premium linen hire
+                                and professional laundry service. We provide fresh, crisp, high-quality cotton sheets
+                                and towels—professionally washed, stain-free, and beautifully made for every guest
+                                arrival.</p>
+                        </div>
+                        <div class="feature-two__star-1">
+                            <img src="assets/images/shapes/feature-two-star-1.png" alt="">
+                        </div>
+                        <div class="feature-two__star-2">
+                            <img src="assets/images/shapes/feature-two-star-2.png" alt="">
+                        </div>
+                        <div class="feature-two__star-3">
+                            <img src="assets/images/shapes/feature-two-star-3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!--Feature Two Single End-->
+                <!--Feature Two Single Start-->
+                <div class="col-xl-6 wow fadeInLeft" data-wow-delay="300ms">
+                    <div class="feature-two__single">
+                        <div class="feature-two__icon">
+                            <img src="assets/images/icon/feature-one-icon-3.png" alt="">
+                        </div>
+                        <div class="feature-two__content">
+                            <h3 class="feature-two__title"><a href="#">Property Condition Reporting</a></h3>
+                            <p class="feature-two__text">Stay fully informed, even when you’re away. After every
+                                checkout, we provide clear updates on your property’s condition, highlighting any
+                                damages, missing items, or maintenance concerns—so issues are addressed quickly and
+                                smoothly.</p>
+                        </div>
+                        <div class="feature-two__star-1">
+                            <img src="assets/images/shapes/feature-two-star-1.png" alt="">
+                        </div>
+                        <div class="feature-two__star-2">
+                            <img src="assets/images/shapes/feature-two-star-2.png" alt="">
+                        </div>
+                        <div class="feature-two__star-3">
+                            <img src="assets/images/shapes/feature-two-star-3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 wow fadeInLeft" data-wow-delay="300ms">
+                    <div class="feature-two__single">
+                        <div class="feature-two__icon">
+                            <img src="assets/images/icon/feature-one-icon-3.png" alt="">
+                        </div>
+                        <div class="feature-two__content">
+                            <h3 class="feature-two__title"><a href="#">Inventory & Stock Management</a></h3>
+                            <p class="feature-two__text">We take care of all essentials so you don’t have to. From
+                                toiletries and cleaning supplies to guest amenities, we monitor, restock, and manage
+                                inventory to ensure your</p>
+                        </div>
+                        <div class="feature-two__star-1">
+                            <img src="assets/images/shapes/feature-two-star-1.png" alt="">
+                        </div>
+                        <div class="feature-two__star-2">
+                            <img src="assets/images/shapes/feature-two-star-2.png" alt="">
+                        </div>
+                        <div class="feature-two__star-3">
+                            <img src="assets/images/shapes/feature-two-star-3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!--Feature Two Single End-->
             </div>
-        </section>
-        
-        <!--Feature Two End-->
+        </div>
+    </section>
 
-        <!--We Cleaning Start
+    <section class="why-choose-one">
+        <div class="why-choose-one-shape-1"
+            style="background-image: url(https://bracketweb.com/brotewp/wp-content/uploads/2022/06/why-choose-one-shape-1.png);">
+        </div>
+        <div class="why-choose-one__img">
+            <img src="	https://bracketweb.com/brotewp/wp-content/uploads/2022/06/why-choose-one-img-1.png" alt="">
+        </div>
+        <div class="why-choose-one-bubble-1">
+            <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/why-choose-bubble-1.png" alt="">
+        </div>
+        <div class="why-choose-one-bubble-2">
+            <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/why-choose-bubble-2.png" alt="">
+        </div>
+        <div class="why-choose-one-bubble-3">
+            <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/why-choose-bubble-3.png" alt="">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="why-choosee-one__left">
+                        <div class="why-choose-one__img-2">
+                            <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/why-choose-one-img-2.jpg"
+                                alt="">
+                        </div>
+                        <div class="why-choose-one__img-3">
+                            <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/why-choose-one-img-3.jpg"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="why-choose-one__right">
+                        <div class="section-title text-left">
+                            <span class="section-title__tagline">Why Choose Us for</span>
+                            <h2 class="section-title__title">Your Holiday Home Cleaning Needs in Dubai?
+                            </h2>
+                        </div>
+                        <ul class="list-unstyled why-choose-one__points">
+                            <li>
+                                <div class="icon">
+                                    <span class="icon-checked"></span>
+                                </div>
+                                <div class="text">
+                                    <h4>Dubai Holiday Home Specialists</h4>
+                                    <p>We understand Dubai’s short-term rental standards inside out. From Airbnb and
+                                        Booking.com requirements to luxury guest expectations, our services are tailored
+                                        specifically for Dubai’s holiday homes.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="icon-checked"></span>
+                                </div>
+                                <div class="text">
+                                    <h4>Trained, Verified & Professional Staff</h4>
+                                    <p>Our cleaning teams are fully trained, background-checked, and experienced in
+                                        high-end properties. Every cleaner follows strict quality and hygiene standards
+                                        to ensure consistent, five-star results.</p>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Feature Two End-->
+
+    <!--We Cleaning Start
         <section class="we-cleaning">
             <div class="container">
                 <div class="row">
@@ -754,140 +815,252 @@ $(document).ready(function () {
 
 
 
-        <!--Services Two Start-->
-        
+    <!--Services Two Start-->
 
-        
 
-        <section class="before-after-hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-              <div class="hero-subtitle">✦ BEFORE & AFTER ✦</div>
-              <h2 class="hero-title">Recent Completed Projects</h2>
-            </div>
-          </section>
-          
-          <!-- SLIDER SECTION -->
-          <section class="comparison-section">
-            <div class="comparison-card">
-              <div class="before-after-container">
-          
+
+
+    <section class="before-after-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-subtitle">✦ BEFORE & AFTER ✦</div>
+            <h2 class="hero-title">Recent Completed Projects</h2>
+        </div>
+    </section>
+
+    <!-- SLIDER SECTION -->
+    <section class="comparison-section">
+        <div class="comparison-card">
+            <div class="before-after-container">
+
                 <!-- Before Image -->
                 <div class="after-image-wrapper">
                     <img src="https://themejunction.net/html/cleannes/demo/assets/images/before-after/before-after-2.png"
-                         class="image after-image" alt="After">
-                  </div>
+                        class="image after-image" alt="After">
+                </div>
                 <img src="https://themejunction.net/html/cleannes/demo/assets/images/before-after/before-after-1.png"
-                     class="image before-image" alt="Before">
-          
+                    class="image before-image" alt="Before">
+
                 <!-- After Image -->
-                
-          
+
+
                 <!-- Slider -->
                 <input type="range" min="0" max="100" value="50" class="slider">
-          
+
                 <!-- Labels -->
                 <div class="label after-label">After</div>
                 <div class="label before-label">Before</div>
-                
-          
-              </div>
-            </div>
-          </section>
-          
-        <section class="services-two">
-            <div class="services-two-bubble float-bob-x"
-                style="background-image: url(assets/images/shapes/services-two-bubble.png);"></div>
-            <div class="services-two-dot-1 float-bob-y">
-                <img src="assets/images/shapes/services-two-dot-1.png" alt="">
-            </div>
-            <div class="services-two-dot-2 float-bob-y">
-                <img src="assets/images/shapes/services-two-dot-2.png" alt="">
-            </div>
-            <div class="container">
-                <div class="section-title text-center">
-                    <span class="section-title__tagline">What We’re Offering</span>
-                    <h2 class="section-title__title">Providing the Best Services <br> for Our Customers</h2>
-                </div>
-                <div class="row">
-                    <!--Services Two single Start-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="services-two__single">
-                            <div class="services-two__img-box">
-                                <div class="services-two__img">
-                                    <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/services-2-1.jpg" alt="">
-                                </div>
-                                <div class="services-two__icon">
-                                    <span class="icon-plumbing"></span>
-                                </div>
-                            </div>
-                            <div class="services-two__content">
-                                <h3 class="services-two__title"><a href="#">Plumbing Services</a>
-                                </h3>
-                                <p class="services-two__text">Our skilled plumbers handle leaks, repairs, and installations with precision.
-We ensure reliable solutions to keep your home running smoothly.</p>
-                                <a href="#" class="services-two__btn">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Services Two single End-->
-                    <!--Services Two single Start-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="services-two__single">
-                            <div class="services-two__img-box">
-                                <div class="services-two__img">
-                                    <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/services-2-2.jpg" alt="">
-                                </div>
-                                <div class="services-two__icon">
-                                    <span class="icon-laundry"></span>
-                                </div>
-                            </div>
-                            <div class="services-two__content">
-                                <h3 class="services-two__title"><a href="#">Laundry Services</a>
-                                </h3>
-                                <p class="services-two__text">Fresh, clean, and perfectly cared-for laundry every time.
-We save you time with efficient washing, drying, and folding services.</p>
-                                <a href="#" class="services-two__btn">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Services Two single End-->
-                    <!--Services Two single Start-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="services-two__single">
-                            <div class="services-two__img-box">
-                                <div class="services-two__img">
-                                    <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/services-2-4.jpg" alt="">
-                                </div>
-                                <div class="services-two__icon">
-                                    <span class="icon-washing-plate"></span>
-                                </div>
-                            </div>
-                            <div class="services-two__content">
-                                <h3 class="services-two__title"><a href="#">Kitchen Cleaning</a>
-                                </h3>
-                                <p class="services-two__text">Deep cleaning for a hygienic and sparkling kitchen space.
-We remove grease, stains, and bacteria for a healthier home.</p>
-                                <a href="#" class="services-two__btn">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Services Two single End-->
-                </div>
-            </div>
-        </section>
-        <!--Services Two End-->
 
-        <!--Brand One Start-->
-        <section class="team-page-carousel">
-            
-            <div class="container">
-                <div class="section-title text-left">
-                                
-                                <h2 class="section-title__title">Our Team
-                                </h2>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="services-two">
+        <div class="services-two-bubble float-bob-x"
+            style="background-image: url(assets/images/shapes/services-two-bubble.png);"></div>
+        <div class="services-two-dot-1 float-bob-y">
+            <img src="assets/images/shapes/services-two-dot-1.png" alt="">
+        </div>
+        <div class="services-two-dot-2 float-bob-y">
+            <img src="assets/images/shapes/services-two-dot-2.png" alt="">
+        </div>
+        <div class="container">
+            <div class="section-title text-center">
+                <span class="section-title__tagline">What We’re Offering</span>
+                <h2 class="section-title__title">Providing the Best Services <br> for Our Customers</h2>
+            </div>
+            <div class="row">
+                <!--Services Two single Start-->
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="services-two__single">
+                        <div class="services-two__img-box">
+                            <div class="services-two__img">
+                                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/services-2-1.jpg"
+                                    alt="">
                             </div>
-                <div class="thm-owl__carousel owl-theme owl-carousel team-page-carousel-box" data-owl-options='{
+                            <div class="services-two__icon">
+                                <span class="icon-plumbing"></span>
+                            </div>
+                        </div>
+                        <div class="services-two__content">
+                            <h3 class="services-two__title"><a href="#">Plumbing Services</a>
+                            </h3>
+                            <p class="services-two__text">Our skilled plumbers handle leaks, repairs, and installations
+                                with precision.
+                                We ensure reliable solutions to keep your home running smoothly.</p>
+                            <a href="#" class="services-two__btn">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Services Two single End-->
+                <!--Services Two single Start-->
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="services-two__single">
+                        <div class="services-two__img-box">
+                            <div class="services-two__img">
+                                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/services-2-2.jpg"
+                                    alt="">
+                            </div>
+                            <div class="services-two__icon">
+                                <span class="icon-laundry"></span>
+                            </div>
+                        </div>
+                        <div class="services-two__content">
+                            <h3 class="services-two__title"><a href="#">Laundry Services</a>
+                            </h3>
+                            <p class="services-two__text">Fresh, clean, and perfectly cared-for laundry every time.
+                                We save you time with efficient washing, drying, and folding services.</p>
+                            <a href="#" class="services-two__btn">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Services Two single End-->
+                <!--Services Two single Start-->
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="services-two__single">
+                        <div class="services-two__img-box">
+                            <div class="services-two__img">
+                                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/services-2-4.jpg"
+                                    alt="">
+                            </div>
+                            <div class="services-two__icon">
+                                <span class="icon-washing-plate"></span>
+                            </div>
+                        </div>
+                        <div class="services-two__content">
+                            <h3 class="services-two__title"><a href="#">Kitchen Cleaning</a>
+                            </h3>
+                            <p class="services-two__text">Deep cleaning for a hygienic and sparkling kitchen space.
+                                We remove grease, stains, and bacteria for a healthier home.</p>
+                            <a href="#" class="services-two__btn">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Services Two single End-->
+            </div>
+        </div>
+    </section>
+    <!--Services Two End-->
+
+    <!--Brand One Start-->
+    <section class="project-one">
+        <div class="project-one__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="project-one__left">
+                            <div class="section-title text-left">
+                                <span class="section-title__tagline">Complete Projects</span>
+                                <h2 class="section-title__title">Keep Eye on Our New Projects</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="project-one__right">
+                            <p class="project-one__text-1"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="video-carousel owl-carousel">
+
+            <div class="video-item" data-video="oCOq0L2xeag">
+                <div class="video-thumb">
+                    <img src="https://img.youtube.com/vi/oCOq0L2xeag/hqdefault.jpg" alt="">
+                    <span class="play-btn">▶</span>
+                </div>
+            </div>
+
+            <div class="video-item" data-video="1Bsgv6DnTiI">
+                <div class="video-thumb">
+                    <img src="https://img.youtube.com/vi/1Bsgv6DnTiI/hqdefault.jpg" alt="">
+                    <span class="play-btn">▶</span>
+                </div>
+            </div>
+
+        </div>
+        <div id="video-modal">
+            <div id="video-modal-content">
+                <span id="close-modal">&times;</span>
+                <div id="video-wrapper"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="faq-one">
+        <div class="faq-one-bg"
+            style="background-image: url(https://bracketweb.com/brotewp/wp-content/uploads/2022/06/faq-one-bg.jpg);">
+        </div>
+        <div class="faq-one-shape-1 float-bob-x"
+            style="background-image: url(https://bracketweb.com/brotewp/wp-content/uploads/2022/06/faq-one-shape-1.png);">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-9">
+                    <div class="faq-one__left">
+                        <div class="section-title text-left">
+                            <span class="section-title__tagline">Our Company FAQs</span>
+                            <h2 class="section-title__title">Frequently Asked Question from Our Clients</h2>
+                        </div>
+                        <div class="accrodion-grp" data-grp-name="faq-one-accrodion">
+                            <div class="accrodion active">
+                                <div class="accrodion-title">
+                                    <h4>What sets your holiday home cleaning service apart from others?</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>Our team is specifically trained for Holiday Homes, we only work with Airbnb
+                                            and Holiday Home properties, so we understand how exactly the cleanings
+                                            should be done. Other than that we offer custom packages, and everything you
+                                            would need for your holiday home.</p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h4>What is your operating hours?</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>We work everyday of the week between 9AM and 7:30PM. We understand that
+                                            certain hours are the peak times for holiday home cleanings, we have an
+                                            ample workforce dedicated to meeting the demand during the busy period from
+                                            11AM to 3PM.</p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                            <div class="accrodion last-chiled">
+                                <div class="accrodion-title">
+                                    <h4>Can I customize the cleaning services to suit my specific requirements?</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>Absolutely! Our services are flexible and customizable. Let us know your
+                                            preferences, and we’ll tailor a cleaning plan that fits your needs.</p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-page-carousel">
+
+        <div class="container">
+            <div class="section-title text-left">
+
+                <h2 class="section-title__title">Our Team
+                </h2>
+            </div>
+            <div class="thm-owl__carousel owl-theme owl-carousel team-page-carousel-box" data-owl-options='{
 					"items": 3,
 					"margin": 30,
 					"smartSpeed": 700,
@@ -908,203 +1081,108 @@ We remove grease, stains, and bacteria for a healthier home.</p>
 						}
 					}
 				}'>
-                    <div class="item">
-                        <!--Team Page Carousel Single Start-->
-                        <div class="team-one__single">
-                            <div class="team-one__img">
-                                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/team-1-1.jpg" alt="">
-                                
-                            </div>
-                            <div class="team-one__content">
-                                <div class="team-one__title-box">
-                                    <h3 class="team-one__name"><a href="#">Jessica Brown</a></h3>
-                                    <ul class="list-unstyled team-one__social-two">
-                                        <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="team-one__sub-title-box">
-                                    <p class="team-one__sub-title">Window Cleaner</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Team Page Carousel Single End-->
-                    </div>
-                    <div class="item">
-                        <!--Team Page Carousel Single Start-->
-                        <div class="team-one__single">
-                            <div class="team-one__img">
-                                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/team-1-2.jpg" alt="">
-                                
-                            </div>
-                            <div class="team-one__content">
-                                <div class="team-one__title-box">
-                                    <h3 class="team-one__name"><a href="#">Robert Michale</a></h3>
-                                    <ul class="list-unstyled team-one__social-two">
-                                        <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="team-one__sub-title-box">
-                                    <p class="team-one__sub-title">Window Cleaner</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Team Page Carousel Single End-->
-                    </div>
-                    <div class="item">
-                        <!--Team Page Carousel Single Start-->
-                        <div class="team-one__single">
-                            <div class="team-one__img">
-                                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/team-1-3.jpg" alt="">
-                                
-                            </div>
-                            <div class="team-one__content">
-                                <div class="team-one__title-box">
-                                    <h3 class="team-one__name"><a href="#">Christine Eve</a></h3>
-                                    <ul class="list-unstyled team-one__social-two">
-                                        <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="team-one__sub-title-box">
-                                    <p class="team-one__sub-title">Window Cleaner</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Team Page Carousel Single End-->
-                    </div>
-                    <div class="item">
-                        <!--Team Page Carousel Single Start-->
-                        <div class="team-one__single">
-                            <div class="team-one__img">
-                                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/team-1-4.jpg" alt="">
-                                
-                            </div>
-                            <div class="team-one__content">
-                                <div class="team-one__title-box">
-                                    <h3 class="team-one__name"><a href="#">David Cooper</a></h3>
-                                    <ul class="list-unstyled team-one__social-two">
-                                        <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="team-one__sub-title-box">
-                                    <p class="team-one__sub-title">Window Cleaner</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Team Page Carousel Single End-->
-                    </div>
-                    
-            </div>
-        </section>
-        <!--Brand One End-->
+                <div class="item">
+                    <!--Team Page Carousel Single Start-->
+                    <div class="team-one__single">
+                        <div class="team-one__img">
+                            <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/team-1-1.jpg" alt="">
 
-        <!--FAQ One Start-->
-        <section class="faq-one">
-            <div class="faq-one-bg" style="background-image: url(https://bracketweb.com/brotewp/wp-content/uploads/2022/06/faq-one-bg.jpg);"></div>
-            <div class="faq-one-shape-1 float-bob-x"
-                style="background-image: url(https://bracketweb.com/brotewp/wp-content/uploads/2022/06/faq-one-shape-1.png);"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-8 col-lg-9">
-                        <div class="faq-one__left">
-                            <div class="section-title text-left">
-                                <span class="section-title__tagline">Our Company FAQs</span>
-                                <h2 class="section-title__title">Frequently Asked Question from Our Clients</h2>
+                        </div>
+                        <div class="team-one__content">
+                            <div class="team-one__title-box">
+                                <h3 class="team-one__name"><a href="#">Jessica Brown</a></h3>
+                                <ul class="list-unstyled team-one__social-two">
+                                    <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+                                </ul>
                             </div>
-                            <div class="accrodion-grp" data-grp-name="faq-one-accrodion">
-                                <div class="accrodion active">
-                                    <div class="accrodion-title">
-                                        <h4>What sets your holiday home cleaning service apart from others?</h4>
-                                    </div>
-                                    <div class="accrodion-content">
-                                        <div class="inner">
-                                            <p>Our team is specifically trained for Holiday Homes, we only work with Airbnb and Holiday Home properties, so we understand how exactly the cleanings should be done. Other than that we offer custom packages, and everything you would need for your holiday home.</p>
-                                        </div><!-- /.inner -->
-                                    </div>
-                                </div>
-                                <div class="accrodion">
-                                    <div class="accrodion-title">
-                                        <h4>What is your operating hours?</h4>
-                                    </div>
-                                    <div class="accrodion-content">
-                                        <div class="inner">
-                                            <p>We work everyday of the week between 9AM and 7:30PM. We understand that certain hours are the peak times for holiday home cleanings, we have an ample workforce dedicated to meeting the demand during the busy period from 11AM to 3PM.</p>
-                                        </div><!-- /.inner -->
-                                    </div>
-                                </div>
-                                <div class="accrodion last-chiled">
-                                    <div class="accrodion-title">
-                                        <h4>Can I customize the cleaning services to suit my specific requirements?</h4>
-                                    </div>
-                                    <div class="accrodion-content">
-                                        <div class="inner">
-                                            <p>Absolutely! Our services are flexible and customizable. Let us know your preferences, and we’ll tailor a cleaning plan that fits your needs.</p>
-                                        </div><!-- /.inner -->
-                                    </div>
-                                </div>
-                                
-
+                            <div class="team-one__sub-title-box">
+                                <p class="team-one__sub-title">Window Cleaner</p>
                             </div>
                         </div>
                     </div>
+                    <!--Team Page Carousel Single End-->
                 </div>
-            </div>
-        </section>
-        <!--FAQ One End-->
+                <div class="item">
+                    <!--Team Page Carousel Single Start-->
+                    <div class="team-one__single">
+                        <div class="team-one__img">
+                            <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/team-1-2.jpg" alt="">
 
-        <!--Project One Start-->
-        <section class="project-one">
-            <div class="project-one__top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="project-one__left">
-                                <div class="section-title text-left">
-                                    <span class="section-title__tagline">Complete Projects</span>
-                                    <h2 class="section-title__title">Keep Eye on Our New Projects</h2>
-                                </div>
-                            </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="project-one__right">
-                                <p class="project-one__text-1"></p>
+                        <div class="team-one__content">
+                            <div class="team-one__title-box">
+                                <h3 class="team-one__name"><a href="#">Robert Michale</a></h3>
+                                <ul class="list-unstyled team-one__social-two">
+                                    <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="team-one__sub-title-box">
+                                <p class="team-one__sub-title">Window Cleaner</p>
                             </div>
                         </div>
                     </div>
+                    <!--Team Page Carousel Single End-->
                 </div>
+                <div class="item">
+                    <!--Team Page Carousel Single Start-->
+                    <div class="team-one__single">
+                        <div class="team-one__img">
+                            <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/team-1-3.jpg" alt="">
+
+                        </div>
+                        <div class="team-one__content">
+                            <div class="team-one__title-box">
+                                <h3 class="team-one__name"><a href="#">Christine Eve</a></h3>
+                                <ul class="list-unstyled team-one__social-two">
+                                    <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="team-one__sub-title-box">
+                                <p class="team-one__sub-title">Window Cleaner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Team Page Carousel Single End-->
+                </div>
+                <div class="item">
+                    <!--Team Page Carousel Single Start-->
+                    <div class="team-one__single">
+                        <div class="team-one__img">
+                            <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/team-1-4.jpg" alt="">
+
+                        </div>
+                        <div class="team-one__content">
+                            <div class="team-one__title-box">
+                                <h3 class="team-one__name"><a href="#">David Cooper</a></h3>
+                                <ul class="list-unstyled team-one__social-two">
+                                    <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="team-one__sub-title-box">
+                                <p class="team-one__sub-title">Window Cleaner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Team Page Carousel Single End-->
+                </div>
+
             </div>
-           <div class="video-carousel owl-carousel">
+    </section>
+    <!--Brand One End-->
 
-    <div class="video-item" data-video="oCOq0L2xeag">
-        <div class="video-thumb">
-            <img src="https://img.youtube.com/vi/oCOq0L2xeag/hqdefault.jpg" alt="">
-            <span class="play-btn">▶</span>
-        </div>
-    </div>
+    <!--FAQ One Start-->
+    <!--FAQ One End-->
 
-    <div class="video-item" data-video="1Bsgv6DnTiI">
-        <div class="video-thumb">
-            <img src="https://img.youtube.com/vi/1Bsgv6DnTiI/hqdefault.jpg" alt="">
-            <span class="play-btn">▶</span>
-        </div>
-    </div>
+    <!--Project One Start-->
 
-</div>
-<div id="video-modal">
-    <div id="video-modal-content">
-        <span id="close-modal">&times;</span>
-        <div id="video-wrapper"></div>
-    </div>
-</div>
-
-        </section>
-        <section class="testimonial-one testimonial-carousel-page">
-            <div class="container">
-                <h2 class="section-title__title">Our Testimonials</h2><br>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="testimonial-one__inner">
-                            <div class="owl-carousel owl-theme thm-owl__carousel testimonial-one__carousel testimonial-carousel-page__carousel"
-                                data-owl-options='{
+    <section class="testimonial-one testimonial-carousel-page">
+        <div class="container">
+            <h2 class="section-title__title">Our Testimonials</h2><br>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="testimonial-one__inner">
+                        <div class="owl-carousel owl-theme thm-owl__carousel testimonial-one__carousel testimonial-carousel-page__carousel"
+                            data-owl-options='{
                                 "loop": true,
                                 "autoplay": true,
                                 "margin": 30,
@@ -1128,347 +1206,275 @@ We remove grease, stains, and bacteria for a healthier home.</p>
                                     }
                                 }
                             }'>
-                                <!--Testimonial One Single Start-->
-                                
-                                <!--Testimonial One Single End-->
-                                <!--Testimonial One Single Start-->
-                                <div class="testimonial-one__single">
-                                    <p class="testimonial-one__text">Excellent service with clear communication and timely delivery.</p>
-                                    <div class="testimonial-one__client-details">
-                                        <h3 class="testimonial-one__client-name">Yusuf Al-Nuaimi</h3>
-                                        <p class="testimonial-one__client-sub-title"></p>
-                                    </div>
-                                    <div class="testimonial-one__client-img">
-                                        <img src="assets/images/user.jpg" style="width:97px;height:97px"alt="">
-                                        <div class="testimonial-one__client-img-boxs"></div>
-                                    </div>
-                                    <div class="testimonial-one__quote">
-                                        <span class="icon-quote"></span>
-                                    </div>
+                            <!--Testimonial One Single Start-->
+
+                            <!--Testimonial One Single End-->
+                            <!--Testimonial One Single Start-->
+                            <div class="testimonial-one__single">
+                                <p class="testimonial-one__text">Excellent service with clear communication and timely
+                                    delivery.</p>
+                                <div class="testimonial-one__client-details">
+                                    <h3 class="testimonial-one__client-name">Yusuf Al-Nuaimi</h3>
+                                    <p class="testimonial-one__client-sub-title"></p>
                                 </div>
-                                <!--Testimonial One Single End-->
-                                <!--Testimonial One Single Start-->
-                                <div class="testimonial-one__single">
-                                    <p class="testimonial-one__text">Reliable, responsive, and very easy to work with. Great experience overall.</p>
-                                    <div class="testimonial-one__client-details">
-                                        <h3 class="testimonial-one__client-name">Aisha Mohammed</h3>
-                                        <p class="testimonial-one__client-sub-title"></p>
-                                    </div>
-                                    <div class="testimonial-one__client-img">
-                                        <img src="assets/images/user.jpg" style="width:97px;height:97px"alt="">
-                                        <div class="testimonial-one__client-img-boxs"></div>
-                                    </div>
-                                    <div class="testimonial-one__quote">
-                                        <span class="icon-quote"></span>
-                                    </div>
+                                <div class="testimonial-one__client-img">
+                                    <img src="assets/images/user.jpg" style="width:97px;height:97px" alt="">
+                                    <div class="testimonial-one__client-img-boxs"></div>
                                 </div>
-                                <!--Testimonial One Single End-->
-                                <!--Testimonial One Single Start-->
-                                <div class="testimonial-one__single">
-                                    <p class="testimonial-one__text">Booking an appointment was quick and hassle-free. The expert guidance was truly helpful.</p>
-                                    <div class="testimonial-one__client-details">
-                                        <h3 class="testimonial-one__client-name">Omar Khalid</h3>
-                                        <p class="testimonial-one__client-sub-title"></p>
-                                    </div>
-                                    <div class="testimonial-one__client-img">
-                                        <img src="assets/images/user.jpg" style="width:97px;height:97px"alt="">
-                                        <div class="testimonial-one__client-img-boxs"></div>
-                                    </div>
-                                    <div class="testimonial-one__quote">
-                                        <span class="icon-quote"></span>
-                                    </div>
+                                <div class="testimonial-one__quote">
+                                    <span class="icon-quote"></span>
                                 </div>
-                                <!--Testimonial One Single End-->
-                                <!--Testimonial One Single Start-->
-                                <div class="testimonial-one__single">
-                                    <p class="testimonial-one__text">The team understood our requirements perfectly and delivered exactly what we needed.</p>
-                                    <div class="testimonial-one__client-details">
-                                        <h3 class="testimonial-one__client-name">Fatima Al-Zahra</h3>
-                                        <p class="testimonial-one__client-sub-title"></p>
-                                    </div>
-                                    <div class="testimonial-one__client-img">
-                                        <img src="assets/images/user.jpg" style="width:97px;height:97px"alt="">
-                                        <div class="testimonial-one__client-img-boxs"></div>
-                                    </div>
-                                    <div class="testimonial-one__quote">
-                                        <span class="icon-quote"></span>
-                                    </div>
-                                </div>
-                                <!--Testimonial One Single End-->
-                                <!--Testimonial One Single Start-->
-                                <div class="testimonial-one__single">
-                                    <p class="testimonial-one__text">Outstanding service and professional support from start to finish. Highly recommended!</p>
-                                    <div class="testimonial-one__client-details">
-                                        <h3 class="testimonial-one__client-name">Ahmed Al-Farsi</h3>
-                                        
-                                    </div>
-                                    <div class="testimonial-one__client-img">
-                                        <img src="assets/images/user.jpg" style="width:97px;height:97px"alt="">
-                                        <div class="testimonial-one__client-img-boxs"></div>
-                                    </div>
-                                    <div class="testimonial-one__quote">
-                                        <span class="icon-quote"></span>
-                                    </div>
-                                </div>
-                                <!--Testimonial One Single End-->
                             </div>
+                            <!--Testimonial One Single End-->
+                            <!--Testimonial One Single Start-->
+                            <div class="testimonial-one__single">
+                                <p class="testimonial-one__text">Reliable, responsive, and very easy to work with. Great
+                                    experience overall.</p>
+                                <div class="testimonial-one__client-details">
+                                    <h3 class="testimonial-one__client-name">Aisha Mohammed</h3>
+                                    <p class="testimonial-one__client-sub-title"></p>
+                                </div>
+                                <div class="testimonial-one__client-img">
+                                    <img src="assets/images/user.jpg" style="width:97px;height:97px" alt="">
+                                    <div class="testimonial-one__client-img-boxs"></div>
+                                </div>
+                                <div class="testimonial-one__quote">
+                                    <span class="icon-quote"></span>
+                                </div>
+                            </div>
+                            <!--Testimonial One Single End-->
+                            <!--Testimonial One Single Start-->
+                            <div class="testimonial-one__single">
+                                <p class="testimonial-one__text">Booking an appointment was quick and hassle-free. The
+                                    expert guidance was truly helpful.</p>
+                                <div class="testimonial-one__client-details">
+                                    <h3 class="testimonial-one__client-name">Omar Khalid</h3>
+                                    <p class="testimonial-one__client-sub-title"></p>
+                                </div>
+                                <div class="testimonial-one__client-img">
+                                    <img src="assets/images/user.jpg" style="width:97px;height:97px" alt="">
+                                    <div class="testimonial-one__client-img-boxs"></div>
+                                </div>
+                                <div class="testimonial-one__quote">
+                                    <span class="icon-quote"></span>
+                                </div>
+                            </div>
+                            <!--Testimonial One Single End-->
+                            <!--Testimonial One Single Start-->
+                            <div class="testimonial-one__single">
+                                <p class="testimonial-one__text">The team understood our requirements perfectly and
+                                    delivered exactly what we needed.</p>
+                                <div class="testimonial-one__client-details">
+                                    <h3 class="testimonial-one__client-name">Fatima Al-Zahra</h3>
+                                    <p class="testimonial-one__client-sub-title"></p>
+                                </div>
+                                <div class="testimonial-one__client-img">
+                                    <img src="assets/images/user.jpg" style="width:97px;height:97px" alt="">
+                                    <div class="testimonial-one__client-img-boxs"></div>
+                                </div>
+                                <div class="testimonial-one__quote">
+                                    <span class="icon-quote"></span>
+                                </div>
+                            </div>
+                            <!--Testimonial One Single End-->
+                            <!--Testimonial One Single Start-->
+                            <div class="testimonial-one__single">
+                                <p class="testimonial-one__text">Outstanding service and professional support from start
+                                    to finish. Highly recommended!</p>
+                                <div class="testimonial-one__client-details">
+                                    <h3 class="testimonial-one__client-name">Ahmed Al-Farsi</h3>
+
+                                </div>
+                                <div class="testimonial-one__client-img">
+                                    <img src="assets/images/user.jpg" style="width:97px;height:97px" alt="">
+                                    <div class="testimonial-one__client-img-boxs"></div>
+                                </div>
+                                <div class="testimonial-one__quote">
+                                    <span class="icon-quote"></span>
+                                </div>
+                            </div>
+                            <!--Testimonial One Single End-->
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!--Project One End-->
+        </div>
+    </section>
+    <!--Project One End-->
 
-        <!--Process Start-->
-        <section class="process">
+    <!--Process Start-->
+
+    <!--Process End-->
+
+    <!--Call One Start-->
+    <section class="call-one">
+        <div class="call-one-shape-1" style="background-image: url(assets/images/shapes/call-one-shape-1.png);">
+        </div>
+        <div class="call-one-shape-2" style="background-image: url(assets/images/shapes/call-one-shape-2.png);">
+        </div>
+        <div class="container">
+            <div class="call-one__inner">
+                <div class="call-one__text-box">
+                    <p class="call-one__text">Call us to Take an Extraordinary Service!</p>
+                </div>
+                <div class="call-one__call-number">
+                    <a href="tel:+971 52 145 1348"> <i class="fas fa-phone-alt"></i> +971 52 145 1348</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Call One End-->
+
+    <!--Why Choose One Start-->
+    <!--Why Choose One End-->
+
+    <!--Blog Two Start-->
+    <!--Blog Two End-->
+
+    <!--Information Start-->
+    <section class="information">
+        <div class="container">
+            <div class="information__inner">
+                <div class="information__logo-box">
+                    <div class="information__border-1"></div>
+                    <div class="information__border-2"></div>
+                    <a href="index.html"><img src="assets/images/logo.jpeg" style="width:50px" alt=""></a>
+                </div>
+                <ul class="list-unstyled information__list">
+                    <li>
+                        <div class="information__icon">
+                            <span class="icon-phone"></span>
+                        </div>
+                        <div class="information__content">
+                            <p class="information__sub-title">Book Now</p>
+                            <h5 class="information__number">
+                                <a href="tel:+971 52 145 1348">+971 52 145 1348</a>
+                            </h5>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="information__icon">
+                            <span class="icon-envelope"></span>
+                        </div>
+                        <div class="information__content">
+                            <p class="information__sub-title">Send email</p>
+                            <h5 class="information__number">
+                                <a href="mailto:brote@company.com">brote@company.com</a>
+                            </h5>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="information__icon">
+                            <span class="icon-location-1"></span>
+                        </div>
+                        <div class="information__content">
+                            <p class="information__sub-title">Visit office</p>
+                            <h5 class="information__number">Dubai</h5>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--Information End-->
+
+    <!--Site Footer Start-->
+    <footer class="site-footer">
+        <div class="site-footer-shape-1" style="background-image: url(assets/images/shapes/site-footer-shape-1.png);">
+        </div>
+
+        <div class="site-footer__top">
             <div class="container">
-                <div class="section-title text-center">
-                    <span class="section-title__tagline">Simple 3 Steps Clean</span>
-                    <h2 class="section-title__title">Easy & Quick See How <br> it Works</h2>
-                </div>
-                <div class="process__inner">
-                    <div class="process-line">
-                        <img src="assets/images/shapes/process-line.png" alt="">
-                    </div>
-                    <div class="row">
-                        <!--Process Single Start-->
-                        <div class="col-xl-4 col-lg-4">
-                            <div class="process__single">
-                                <div class="process__icon-box">
-                                    <div class="process__icon">
-                                        <span class="icon-find-my-friend"></span>
-                                        <div class="process-icon-shape"
-                                            style="background-image: url(assets/images/shapes/process-icon-shape.png);">
-                                        </div>
-                                    </div>
-                                    <div class="process__count"></div>
-                                </div>
-                                <div class="process__content">
-                                    <h3 class="process__title"><a href="#">Look for Our <br> Experts</a></h3>
-                                    <p class="process__text">Browse through our team of experienced professionals tailored to your needs.
-Find the right expert who understands your goals and delivers results.</p>
-                                </div>
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="footer-widget__column footer-widget__about">
+                            <h3 class="footer-widget__title">Explore</h3>
+                            <div class="footer-widget__about-text-box">
+                                <p class="footer-widget__about-text">Tincidunt elit magnis nulla facilisis sagittis
+                                    maecenas. Sapien nunced amet dolores.</p>
                             </div>
-                        </div>
-                        <!--Process Single End-->
-                        <!--Process Single Start-->
-                        <div class="col-xl-4 col-lg-4">
-                            <div class="process__single process__single-two">
-                                <div class="process__icon-box">
-                                    <div class="process__icon">
-                                        <span class="icon-choose"></span>
-                                        <div class="process-icon-shape"
-                                            style="background-image: url(assets/images/shapes/process-icon-shape.png);">
-                                        </div>
-                                    </div>
-                                    <div class="process__count"></div>
-                                </div>
-                                <div class="process__content">
-                                    <h3 class="process__title"><a href="#">Choose Our <br>
-                                            Services</a></h3>
-                                    <p class="process__text">Select from a wide range of services designed to fit your requirements.
-Get flexible, reliable solutions that help your business grow with confidence.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Process Single End-->
-                        <!--Process Single Start-->
-                        <div class="col-xl-4 col-lg-4">
-                            <div class="process__single">
-                                <div class="process__icon-box">
-                                    <div class="process__icon">
-                                        <span class="icon-tick-mark"></span>
-                                        <div class="process-icon-shape"
-                                            style="background-image: url(assets/images/shapes/process-icon-shape.png);">
-                                        </div>
-                                    </div>
-                                    <div class="process__count"></div>
-                                </div>
-                                <div class="process__content">
-                                    <h3 class="process__title"><a href="#">Book an <br>
-                                            Appointment</a></h3>
-                                    <p class="process__text">Schedule a convenient time with our experts in just a few clicks.
-Get personalized assistance when it suits you best.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Process Single End-->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Process End-->
+                            <div class="site-footer__social">
 
-        <!--Call One Start-->
-        <section class="call-one">
-            <div class="call-one-shape-1" style="background-image: url(assets/images/shapes/call-one-shape-1.png);">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="footer-widget__column footer-widget__links clearfix">
+                            <h3 class="footer-widget__title">Links</h3>
+                            <ul class="footer-widget__links-list list-unstyled clearfix">
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="team.html">Meet Our Team</a></li>
+                                <li><a href="about.html">What We Do</a></li>
+                                <li><a href="contact-page-1.html">Our Pricing</a></li>
+                                <li><a href="contact-page-2.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="footer-widget__column footer-widget__articles clearfix">
+                            <h3 class="footer-widget__title">Articles</h3>
+                            <ul class="footer-widget__articles-list list-unstyled clearfix">
+                                <li>
+                                    <div class="footer-widget__articles-img">
+                                        <img src="assets/images/resources/footer-widget-articles-img-1.jpg" alt="">
+                                        <a href="blog-details.html"><span class="fa fa-link"></span></a>
+                                    </div>
+                                    <div class="footer-widget__articles-content">
+                                        <p class="footer-widget__articles-date">26 Jan, 2022</p>
+                                        <h5 class="footer-widget__articles-sub-title"><a href="blog-details.html">6
+                                                Cleaning Hacks
+                                                that will Blow your Mind!</a></h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="footer-widget__articles-img">
+                                        <img src="assets/images/resources/footer-widget-articles-img-2.jpg" alt="">
+                                        <a href="blog-details.html"><span class="fa fa-link"></span></a>
+                                    </div>
+                                    <div class="footer-widget__articles-content">
+                                        <p class="footer-widget__articles-date">26 Jan, 2022</p>
+                                        <h5 class="footer-widget__articles-sub-title"><a href="blog-details.html">6
+                                                Cleaning Hacks
+                                                that will Blow your Mind!</a></h5>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="footer-widget__column footer-widget__newsletter">
+                            <h3 class="footer-widget__title">Newsletter</h3>
+                            <p class="footer-widget__newsletter-text">Subscribe our newsletter to get <br> our
+                                latest update & news</p>
+                            <form class="footer-widget__newsletter-form">
+                                <div class="footer-widget__newsletter-input-box">
+                                    <input type="email" placeholder="Email address" name="email">
+                                    <button type="submit" class="footer-widget__newsletter-btn"><i
+                                            class="far fa-paper-plane"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="call-one-shape-2" style="background-image: url(assets/images/shapes/call-one-shape-2.png);">
-            </div>
+        </div>
+        <div class="site-footer__bottom">
             <div class="container">
-                <div class="call-one__inner">
-                    <div class="call-one__text-box">
-                        <p class="call-one__text">Call us to Take an Extraordinary Service!</p>
-                    </div>
-                    <div class="call-one__call-number">
-                        <a href="tel:+971 52 145 1348"> <i class="fas fa-phone-alt"></i> +971 52 145 1348</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Call One End-->
-
-        <!--Why Choose One Start-->
-        <!--Why Choose One End-->
-
-        <!--Blog Two Start-->
-        <!--Blog Two End-->
-
-        <!--Information Start-->
-        <section class="information">
-            <div class="container">
-                <div class="information__inner">
-                    <div class="information__logo-box">
-                        <div class="information__border-1"></div>
-                        <div class="information__border-2"></div>
-                        <a href="index.html"><img src="assets/images/logo.jpeg" style="width:50px" alt=""></a>
-                    </div>
-                    <ul class="list-unstyled information__list">
-                        <li>
-                            <div class="information__icon">
-                                <span class="icon-phone"></span>
-                            </div>
-                            <div class="information__content">
-                                <p class="information__sub-title">Book Now</p>
-                                <h5 class="information__number">
-                                    <a href="tel:+971 52 145 1348">+971 52 145 1348</a>
-                                </h5>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="information__icon">
-                                <span class="icon-envelope"></span>
-                            </div>
-                            <div class="information__content">
-                                <p class="information__sub-title">Send email</p>
-                                <h5 class="information__number">
-                                    <a href="mailto:brote@company.com">brote@company.com</a>
-                                </h5>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="information__icon">
-                                <span class="icon-location-1"></span>
-                            </div>
-                            <div class="information__content">
-                                <p class="information__sub-title">Visit office</p>
-                                <h5 class="information__number">Dubai</h5>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <!--Information End-->
-
-        <!--Site Footer Start-->
-        <footer class="site-footer">
-            <div class="site-footer-shape-1"
-                style="background-image: url(assets/images/shapes/site-footer-shape-1.png);">
-            </div>
-            
-            <div class="site-footer__top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                            <div class="footer-widget__column footer-widget__about">
-                                <h3 class="footer-widget__title">Explore</h3>
-                                <div class="footer-widget__about-text-box">
-                                    <p class="footer-widget__about-text">Tincidunt elit magnis nulla facilisis sagittis
-                                        maecenas. Sapien nunced amet dolores.</p>
-                                </div>
-                                <div class="site-footer__social">
-                                   
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                    <a href="#"><i class="fab fa-youtube"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                            <div class="footer-widget__column footer-widget__links clearfix">
-                                <h3 class="footer-widget__title">Links</h3>
-                                <ul class="footer-widget__links-list list-unstyled clearfix">
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="team.html">Meet Our Team</a></li>
-                                    <li><a href="about.html">What We Do</a></li>
-                                    <li><a href="contact-page-1.html">Our Pricing</a></li>
-                                    <li><a href="contact-page-2.html">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                            <div class="footer-widget__column footer-widget__articles clearfix">
-                                <h3 class="footer-widget__title">Articles</h3>
-                                <ul class="footer-widget__articles-list list-unstyled clearfix">
-                                    <li>
-                                        <div class="footer-widget__articles-img">
-                                            <img src="assets/images/resources/footer-widget-articles-img-1.jpg" alt="">
-                                            <a href="blog-details.html"><span class="fa fa-link"></span></a>
-                                        </div>
-                                        <div class="footer-widget__articles-content">
-                                            <p class="footer-widget__articles-date">26 Jan, 2022</p>
-                                            <h5 class="footer-widget__articles-sub-title"><a href="blog-details.html">6
-                                                    Cleaning Hacks
-                                                    that will Blow your Mind!</a></h5>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="footer-widget__articles-img">
-                                            <img src="assets/images/resources/footer-widget-articles-img-2.jpg" alt="">
-                                            <a href="blog-details.html"><span class="fa fa-link"></span></a>
-                                        </div>
-                                        <div class="footer-widget__articles-content">
-                                            <p class="footer-widget__articles-date">26 Jan, 2022</p>
-                                            <h5 class="footer-widget__articles-sub-title"><a href="blog-details.html">6
-                                                    Cleaning Hacks
-                                                    that will Blow your Mind!</a></h5>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                            <div class="footer-widget__column footer-widget__newsletter">
-                                <h3 class="footer-widget__title">Newsletter</h3>
-                                <p class="footer-widget__newsletter-text">Subscribe our newsletter to get <br> our
-                                    latest update & news</p>
-                                <form class="footer-widget__newsletter-form">
-                                    <div class="footer-widget__newsletter-input-box">
-                                        <input type="email" placeholder="Email address" name="email">
-                                        <button type="submit" class="footer-widget__newsletter-btn"><i
-                                                class="far fa-paper-plane"></i></button>
-                                    </div>
-                                </form>
-                            </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="site-footer__bottom-inner">
+                            <p class="site-footer__bottom-text">© Copyright 2026 by <a href="#">brote.com</a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="site-footer__bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="site-footer__bottom-inner">
-                                <p class="site-footer__bottom-text">© Copyright 2026 by <a href="#">brote.com</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!--Site Footer End-->
+        </div>
+    </footer>
+    <!--Site Footer End-->
 
 
     </div><!-- /.page-wrapper -->
@@ -1481,8 +1487,7 @@ Get personalized assistance when it suits you best.</p>
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/logo.png" width="89"
-                        alt="" /></a>
+                <a href="index.html" aria-label="logo image"><img src="assets/logo.png" width="89" alt="" /></a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>
@@ -1500,7 +1505,7 @@ Get personalized assistance when it suits you best.</p>
             </ul><!-- /.mobile-nav__contact -->
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">
-                    
+
                     <a href="#" class="fab fa-facebook-square"></a>
                     <a href="#" class="fab fa-youtube"></a>
                     <a href="#" class="fab fa-instagram"></a>
@@ -1514,7 +1519,7 @@ Get personalized assistance when it suits you best.</p>
     </div>
     <!-- /.mobile-nav__wrapper -->
 
-    
+
     <!-- /.search-popup -->
 
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
@@ -1554,11 +1559,11 @@ Get personalized assistance when it suits you best.</p>
     <script>
         const slider = document.querySelector('.slider');
         const afterImage = document.querySelector('.after-image-wrapper');
-      
+
         slider.addEventListener('input', (e) => {
-          afterImage.style.width = e.target.value + '%';
+            afterImage.style.width = e.target.value + '%';
         });
-      </script>
+    </script>
 </body>
 
 </html>
