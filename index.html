@@ -48,6 +48,10 @@
     <link rel="stylesheet" href="assets/css/brote-responsive.css" />
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
 
     <script>
         $(document).ready(function () {
@@ -97,6 +101,33 @@
         });
     </script>
     <style>
+        
+
+/* Hover effect */
+
+
+/* Pulse + Bounce animation */
+@keyframes pulseBounce {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  40% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  80% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
         br {
             display: block !important;
         }
@@ -304,20 +335,21 @@
 
         .whatsapp-float {
             position: fixed;
-            right: 1px;
-            top: 50%;
+            right: 10px;
+            top: 90%;
             transform: translateY(-50%);
-            background-color: #25D366;
-            color: #fff;
+            background-color: white;
+            color: #25D366;
             width: 60px;
             height: 60px;
-            border-radius: 0%;
+            border-radius: 50%;
             text-align: center;
             font-size: 32px;
             line-height: 60px;
             z-index: 1000;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             cursor: pointer;
+            animation: pulseBounce 1.8s infinite;
         }
 
         .whatsapp-float:hover,
@@ -362,9 +394,18 @@
     <!-- /.preloader -->
 
 
-    <a href="https://wa.me/+971521451348" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a
+  href="https://wa.me/1234567890"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Font Awesome -->
+
+
 
     <div class="page-wrapper">
         <header class="main-header-two clearfix">
@@ -532,7 +573,7 @@
                                 <div class="col-xl-12">
                                     <div class="main-slider-two__content">
                                         <p class="main-slider-two__sub-title">We’re The No.1</p>
-                                        <h2 class="main-slider-two__title">Holiday Homes Cleaning <br>Company in Dubai
+                                        <h2 class="main-slider-two__title">Holiday Homes <br>Cleaning Company <br>in Dubai
                                         </h2>
                                         <p class="main-slider-two__text" style="text-wrap: wrap;white-space: wrap;">
                                             Setting the standard for exceptional <br>cleanliness in short-term
@@ -546,8 +587,66 @@
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
+                    <div class="swiper-slide">
+                        <div class="main-slider-two-bg-box">
+                            <div class="main-slider-two-image-layer"
+                                style="background-image: url(https://bracketweb.com/brotewp/wp-content/uploads/2022/06/main-slider-1-2.jpg);">
+                            </div>
 
+                            <div class="main-slider-two-shape-box">
+                                <div class="main-slider-two-shape-1"
+                                    style="background-image: url(assets/images/shapes/main-slider-two-shape-1.png);">
+                                </div>
+                                <div class="main-slider-two-shape-2 float-bob-x">
+                                    <img src="assets/images/shapes/main-slider-two-shape-2.png" alt="">
+                                </div>
+                                <div class="main-slider-two-bubble-1 float-bob-x">
+                                    <img src="assets/images/shapes/main-slider-two-bubble-1.png" alt="">
+                                </div>
+                                <div class="main-slider-two-bubble-2 float-bob-y">
+                                    <img src="assets/images/shapes/main-slider-two-bubble-2.png" alt="">
+                                </div>
+                                <div class="main-slider-two-bubble-3 zoominout">
+                                    <img src="assets/images/shapes/main-slider-two-bubble-3.png" alt="">
+                                </div>
+                                <div class="main-slider-two-bubble-4 zoom-fade">
+                                    <img src="assets/images/shapes/main-slider-two-bubble-4.png" alt="">
+                                </div>
+                                <div class="main-slider-two-bubble-5 zoominout-2">
+                                    <img src="assets/images/shapes/main-slider-two-bubble-5.png" alt="">
+                                </div>
+                                <div class="main-slider-two-bubble-6 float-bob-y">
+                                    <img src="assets/images/shapes/main-slider-two-bubble-6.png" alt="">
+                                </div>
+                                <div class="main-slider-two-bubble-7 float-bob-x">
+                                    <img src="assets/images/shapes/main-slider-two-bubble-7.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="main-slider-two__content">
+                                        <p class="main-slider-two__sub-title">We’re The No.1</p>
+                                        <h2 class="main-slider-two__title">Holiday Homes <br>Cleaning Company <br>in Dubai
+                                        </h2>
+                                        <p class="main-slider-two__text" style="text-wrap: wrap;white-space: wrap;">
+                                            Setting the standard for exceptional <br>cleanliness in short-term
+                                            rentals.<br>
+                                        </p>
+                                        <div class="main-slider-two__btn-box">
+                                            <a href="#" class="thm-btn main-slider-two__btn">Discover more <i
+                                                    class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
 
 
 
@@ -735,90 +834,7 @@
         </div>
     </section>
 
-    <!--Feature Two End-->
-
-    <!--We Cleaning Start
-        <section class="we-cleaning">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6">
-                        <div class="we-cleaning__left">
-                            <div class="we-cleaning__img-box wow slideInLeft" data-wow-delay="100ms"
-                                data-wow-duration="2500ms">
-                                <div class="we-cleaning__img">
-                                    <img src="assets/images/resources/we-cleaning-img-1.jpg" alt="">
-                                </div>
-                                <div class="we-cleaning-line">
-                                    <img src="assets/images/shapes/we-cleaning-line.png" alt="">
-                                </div>
-                                <div class="we-cleaning__small-img">
-                                    <img src="assets/images/resources/we-cleaning-small-img.jpg" alt="">
-                                </div>
-                                <div class="we-cleaning__video-link">
-                                    <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup">
-                                        <div class="we-cleaning__video-icon">
-                                            <span class="fa fa-play"></span>
-                                            <i class="ripple"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="we-cleaning__shape-1"></div>
-                                <div class="we-cleaning__shape-2"></div>
-                                <div class="we-cleaning__shape-3"></div>
-                                <div class="we-cleaning__shape-4"></div>
-                                <div class="we-cleaning__shape-5"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6">
-                        <div class="we-cleaning__right">
-                            <div class="section-title text-left">
-                                <span class="section-title__tagline">Best Experts in Cleaning</span>
-                                <h2 class="section-title__title">Why Choose Us for Your
-                                    Holiday Home Cleaning Needs?</h2>
-                            </div>
-                            <p class="we-cleaning__text-1">Lorem ipsum is simply free text dolor sit am adipi we help
-                                you ensure everyone. Tincidunt elit magnis nulla facilisis sagittis maecenas. Sapien
-                                nunced amet dolores sit ipsum velit purus aliq massa fringilla leo.</p>
-                            <div class="we-cleaning__points-box">
-                                <ul class="list-unstyled we-cleaning__points clearfix">
-                                    <li>
-                                        <div class="we-cleaning__icon">
-                                            <span class="icon-house-cleaning"></span>
-                                        </div>
-                                        <div class="we-cleaning__text-box">
-                                            <h4 class="we-cleaning__title">Residential Cleaning <br> Services</h4>
-                                            <p class="we-cleaning__text-2">Tincidunt elit magnis nulla sit <br>
-                                                facilisis sagittis maecenas.</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="we-cleaning__icon">
-                                            <span class="icon-buildings"></span>
-                                        </div>
-                                        <div class="we-cleaning__text-box">
-                                            <h4 class="we-cleaning__title">Commercial Cleaning <br> Services</h4>
-                                            <p class="we-cleaning__text-2">Tincidunt elit magnis nulla sit <br>
-                                                facilisis sagittis maecenas.</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a href="about.html" class="thm-btn we-cleaning__btn">Discover more <i
-                                    class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        We Cleaning End-->
-
-
-
-    <!--Services Two Start-->
-
-
-
+    
 
     <section class="before-after-hero">
         <div class="hero-overlay"></div>
@@ -1386,22 +1402,17 @@
         <div class="site-footer__top">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                         <div class="footer-widget__column footer-widget__about">
-                            <h3 class="footer-widget__title">Explore</h3>
+                            <h3 class="footer-widget__title">About</h3>
                             <div class="footer-widget__about-text-box">
-                                <p class="footer-widget__about-text">Tincidunt elit magnis nulla facilisis sagittis
-                                    maecenas. Sapien nunced amet dolores.</p>
+                                <p class="footer-widget__about-text">Setting the standard for exceptional cleanliness in short-term rentals.<br>
+From Airbnb apartments to luxury holiday homes, we ensure every space is perfectly cleaned, sanitized, and ready to impress.</p>
                             </div>
-                            <div class="site-footer__social">
-
-                                <a href="#"><i class="fab fa-facebook"></i></a>
-                                <a href="#"><i class="fab fa-youtube"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
+                            
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                         <div class="footer-widget__column footer-widget__links clearfix">
                             <h3 class="footer-widget__title">Links</h3>
                             <ul class="footer-widget__links-list list-unstyled clearfix">
@@ -1413,60 +1424,35 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                         <div class="footer-widget__column footer-widget__articles clearfix">
-                            <h3 class="footer-widget__title">Articles</h3>
+                            <h3 class="footer-widget__title">Contact Us</h3>
                             <ul class="footer-widget__articles-list list-unstyled clearfix">
-                                <li>
-                                    <div class="footer-widget__articles-img">
-                                        <img src="assets/images/resources/footer-widget-articles-img-1.jpg" alt="">
-                                        <a href="blog-details.html"><span class="fa fa-link"></span></a>
-                                    </div>
-                                    <div class="footer-widget__articles-content">
-                                        <p class="footer-widget__articles-date">26 Jan, 2022</p>
-                                        <h5 class="footer-widget__articles-sub-title"><a href="blog-details.html">6
-                                                Cleaning Hacks
-                                                that will Blow your Mind!</a></h5>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="footer-widget__articles-img">
-                                        <img src="assets/images/resources/footer-widget-articles-img-2.jpg" alt="">
-                                        <a href="blog-details.html"><span class="fa fa-link"></span></a>
-                                    </div>
-                                    <div class="footer-widget__articles-content">
-                                        <p class="footer-widget__articles-date">26 Jan, 2022</p>
-                                        <h5 class="footer-widget__articles-sub-title"><a href="blog-details.html">6
-                                                Cleaning Hacks
-                                                that will Blow your Mind!</a></h5>
-                                    </div>
-                                </li>
+                                <div class="site-footer__social">
+
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                        <div class="footer-widget__column footer-widget__newsletter">
-                            <h3 class="footer-widget__title">Newsletter</h3>
-                            <p class="footer-widget__newsletter-text">Subscribe our newsletter to get <br> our
-                                latest update & news</p>
-                            <form class="footer-widget__newsletter-form">
-                                <div class="footer-widget__newsletter-input-box">
-                                    <input type="email" placeholder="Email address" name="email">
-                                    <button type="submit" class="footer-widget__newsletter-btn"><i
-                                            class="far fa-paper-plane"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
         <div class="site-footer__bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-12">
+                    <div class="col-xl-6">
                         <div class="site-footer__bottom-inner">
-                            <p class="site-footer__bottom-text">© Copyright 2026 by <a href="#">brote.com</a>
+                            <p class="site-footer__bottom-text">© Copyright 2026 by <a href="#">Urban Shine</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="site-footer__bottom-inner">
+                            <p class="site-footer__bottom-text">Developed by <a href="#">Gragatechnologies</a>
                             </p>
                         </div>
                     </div>
@@ -1522,7 +1508,7 @@
 
     <!-- /.search-popup -->
 
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    
 
 
     <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>

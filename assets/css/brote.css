@@ -6411,7 +6411,7 @@ ul {
 .project-one {
   position: relative;
   display: block;
-  padding: 120px 0 180px;
+  padding: 50px 0 50px;
 }
 
 .project-one__top {
@@ -10216,7 +10216,7 @@ ul {
 .team-page-carousel {
   position: relative;
   display: block;
-  padding: 120px 0 130px;
+  padding: 50px 0 50px;
 }
 
 .team-page-carousel-box.owl-carousel .owl-stage-outer {
@@ -10592,7 +10592,7 @@ ul {
 .testimonial-carousel-page {
   position: relative;
   display: block;
-  padding: 100px 0 100px;
+  padding: 50px 0 50px;
 }
 
 .testimonial-carousel-page__carousel.owl-carousel .owl-dots {
