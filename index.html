@@ -46,10 +46,112 @@
     <!-- template styles -->
     <link rel="stylesheet" href="assets/css/brote.css" />
     <link rel="stylesheet" href="assets/css/brote-responsive.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+$(document).ready(function () {
+    // Initialize Owl Carousel
+    $('.video-carousel').owlCarousel({
+        items: 2,
+        loop: true,
+        dots: true,
+        nav: false
+    });
+
+    // Modal elements
+    const $modal = $('#video-modal');
+    const $wrapper = $('#video-wrapper');
+    const $close = $('#close-modal');
+
+    // Play button click → open modal
+    $('.video-item .video-thumb').on('click', function () {
+        const videoId = $(this).parent().data('video');
+
+        const iframe = `
+            <iframe 
+                src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1"
+                frameborder="0"
+                allow="accelerometer; encrypted-media; gyroscope;   "
+                allowfullscreen>
+            </iframe>
+        `;
+
+        $wrapper.html(iframe);
+        $modal.css('display', 'flex');
+    });
+
+    // Close modal
+    $close.on('click', function () {
+        $wrapper.html(''); // remove iframe to stop video
+        $modal.hide();
+    });
+
+    // Close modal on background click
+    $modal.on('click', function (e) {
+        if (e.target === this) {
+            $wrapper.html('');
+            $modal.hide();
+        }
+    });
+});
+</script>
     <style>
         br{
             display: block !important;
         }
+.video-thumb {
+    position: relative;
+    cursor: pointer;
+}
+.video-thumb img {
+    width: 100%;
+    display: block;
+}
+.play-btn {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-size: 64px;
+    color: #fff;
+    background: rgba(0,0,0,.4);
+}
+
+/* Modal Styles */
+#video-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+#video-modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+}
+#video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+#video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+#close-modal {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
 
 /* HERO SECTION */
 .before-after-hero {
@@ -210,6 +312,20 @@
         body{
             overflow-x: hidden;
         }
+        .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
     </style>
 
 </head>
@@ -950,93 +1066,36 @@ We remove grease, stains, and bacteria for a healthier home.</p>
                         </div>
                         <div class="col-xl-6 col-lg-6">
                             <div class="project-one__right">
-                                <p class="project-one__text-1">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor
-                                    incidut labore et dolore magna for aliqua. Cum sociis natoque penatibus et mages.
-                                    Aene an massa.</p>
+                                <p class="project-one__text-1"></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="project-one__bottom">
-                <div class="project-one__bottom-container">
-                    <div class="owl-carousel owl-theme thm-owl__carousel project-one__carousel" data-owl-options='{
-                        "loop": true,
-                        "autoplay": true,
-                        "margin": 30,
-                        "nav": false,
-                        "dots": true,
-                        "smartSpeed": 500,
-                        "autoplayTimeout": 10000,
-                        "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
-                        "responsive": {
-                            "0": {
-                                "items": 1
-                            },
-                            "768": {
-                                "items": 2
-                            },
-                            "992": {
-                                "items": 2
-                            },
-                            "1200": {
-                                "items": 4
-                            }
-                        }
-                    }'>
-                        <!--Project One Single Start-->
-                        <div class="project-one__single">
-                            <div class="project-one__img">
-                                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/portfolio-1-370x472.jpg" alt="">
-                                <div class="project-one__content">
-                                    <h4 class="project-one__title"><a href="portfolio-details.html">House Cleaning</a>
-                                    </h4>
-                                    <p class="project-one__sub-title">Cleaning Project</p>
-                                </div>
-                                <div class="project-one__arrow">
-                                    <a class="img-popup" href="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/portfolio-1-370x472.jpg"><i
-                                            class="fa fa-angle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Project One Single End-->
-                        <!--Project One Single Start-->
-                        <div class="project-one__single">
-                            <div class="project-one__img">
-                                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/portfolio-2-370x472.jpg" alt="">
-                                <div class="project-one__content">
-                                    <h4 class="project-one__title"><a href="portfolio-details.html">Outdoor Service</a>
-                                    </h4>
-                                    <p class="project-one__sub-title">Cleaning Project</p>
-                                </div>
-                                <div class="project-one__arrow">
-                                    <a class="img-popup" href="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/portfolio-2-370x472.jpg"><i
-                                            class="fa fa-angle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Project One Single End-->
-                        <!--Project One Single Start-->
-                        <div class="project-one__single">
-                            <div class="project-one__img">
-                                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/portfolio-5-370x472.jpg" alt="">
-                                <div class="project-one__content">
-                                    <h4 class="project-one__title"><a href="portfolio-details.html">Plumber Service</a>
-                                    </h4>
-                                    <p class="project-one__sub-title">Cleaning Project</p>
-                                </div>
-                                <div class="project-one__arrow">
-                                    <a class="img-popup" href="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/portfolio-5-370x472.jpg"><i
-                                            class="fa fa-angle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Project One Single End-->
-                        <!--Project One Single Start-->
-                        <!--Project One Single End-->
-                    </div>
-                </div>
-            </div>
+           <div class="video-carousel owl-carousel">
+
+    <div class="video-item" data-video="oCOq0L2xeag">
+        <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/oCOq0L2xeag/hqdefault.jpg" alt="">
+            <span class="play-btn">▶</span>
+        </div>
+    </div>
+
+    <div class="video-item" data-video="1Bsgv6DnTiI">
+        <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/1Bsgv6DnTiI/hqdefault.jpg" alt="">
+            <span class="play-btn">▶</span>
+        </div>
+    </div>
+
+</div>
+<div id="video-modal">
+    <div id="video-modal-content">
+        <span id="close-modal">&times;</span>
+        <div id="video-wrapper"></div>
+    </div>
+</div>
+
         </section>
         <section class="testimonial-one testimonial-carousel-page">
             <div class="container">
