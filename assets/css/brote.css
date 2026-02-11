@@ -1592,7 +1592,10 @@ ul {
 }
 
 .main-menu-two__left {
-  display: block;
+  display: flex;
+  width:75% !important;
+  align-items: center;
+  justify-content: space-between;
   float: left;
 }
 
@@ -9481,6 +9484,7 @@ ul {
     right: 0;
     margin-top: 0;
   }
+  
 }
 
 .comment-one__btn:hover {
@@ -10592,7 +10596,7 @@ ul {
 .testimonial-carousel-page {
   position: relative;
   display: block;
-  padding: 50px 0 50px;
+  padding: 50px 0 100px;
 }
 
 .testimonial-carousel-page__carousel.owl-carousel .owl-dots {
@@ -11102,6 +11106,9 @@ ul {
     margin-bottom: -20px;
     margin-right: -15px;
   }
+  .main-menu-two__left{
+    width:100% !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -11109,6 +11116,7 @@ ul {
     margin-bottom: 0;
   }
 }
+
 
 .portfolio-details__details-list li {
   position: relative;

@@ -102,7 +102,9 @@
     </script>
     <style>
         
-
+#contactfooter li+li{
+margin-left: 0px;
+}
 /* Hover effect */
 
 
@@ -330,7 +332,7 @@
         }
 
         .icon-whatsapp {
-            width: 0.857421875em;
+            width: 0.657421875em;
         }
 
         .whatsapp-float {
@@ -339,7 +341,7 @@
             top: 90%;
             transform: translateY(-50%);
             background-color: white;
-            color: #25D366;
+            color: #0e37b1;
             width: 60px;
             height: 60px;
             border-radius: 50%;
@@ -355,7 +357,7 @@
         .whatsapp-float:hover,
         .main-menu-two__call-icon,
         .main-menu-two__call-icon:hover {
-            background-color: #20b858;
+            background-color: green;
         }
 
         body {
@@ -400,7 +402,7 @@
   target="_blank"
   aria-label="Chat on WhatsApp"
 >
-  <i class="fab fa-whatsapp"></i>
+  <i class="fas fa-phone-volume"></i>
 </a>
 
 <!-- Font Awesome -->
@@ -448,7 +450,7 @@
                         <div class="main-menu-two__wrapper-inner clearfix">
                             <div class="main-menu-two__left">
                                 <div class="main-menu-two__logo">
-                                    <a href="index.html"><img src="assets/logo.png" style="width:220px" alt=""></a>
+                                    <a href="index.html"><img src="assets/logo.png" style="width:280px" alt=""></a>
                                 </div>
                                 <div class="main-menu-two__main-menu-box">
                                     <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
@@ -980,29 +982,54 @@
                 </div>
             </div>
         </div>
-        <div class="video-carousel owl-carousel">
-
-            <div class="video-item" data-video="oCOq0L2xeag">
-                <div class="video-thumb">
-                    <img src="https://img.youtube.com/vi/oCOq0L2xeag/hqdefault.jpg" alt="">
-                    <span class="play-btn">▶</span>
-                </div>
-            </div>
-
-            <div class="video-item" data-video="1Bsgv6DnTiI">
-                <div class="video-thumb">
-                    <img src="https://img.youtube.com/vi/1Bsgv6DnTiI/hqdefault.jpg" alt="">
-                    <span class="play-btn">▶</span>
-                </div>
-            </div>
-
-        </div>
-        <div id="video-modal">
-            <div id="video-modal-content">
-                <span id="close-modal">&times;</span>
-                <div id="video-wrapper"></div>
-            </div>
-        </div>
+        <div class="project-one__bottom">
+                <div class="project-one__bottom-container">
+                    <div class="owl-carousel owl-theme thm-owl__carousel project-one__carousel" data-owl-options='{
+                        "loop": true,
+                        "autoplay": true,
+                        "margin": 30,
+                        "nav": false,
+                        "dots": true,
+                        "smartSpeed": 500,
+                        "autoplayTimeout": 10000,
+                        "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
+                        "responsive": {
+                            "0": {
+                                "items": 1
+                            },
+                            "768": {
+                                "items": 2
+                            },
+                            "992": {
+                                "items": 2
+                            },
+                            "1200": {
+                                "items": 4
+                            }
+                        }
+                    }'>
+                        <!--Project One Single Start-->
+                        <div class="project-one__single">
+                            <div class="project-one__img">
+                                <iframe width="1013" height="570" src="https://www.youtube.com/embed/_Bs5h-ZAnoc" title="Cleaning VIDU   Lobby Duster" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <!--Project One Single End-->
+                        <!--Project One Single Start-->
+                        <div class="project-one__single">
+                            <div class="project-one__img">
+                                <iframe width="1013" height="570" src="https://www.youtube.com/embed/oCOq0L2xeag" title="UAE&#39;s #1 Deep Cleaning Service" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <!--Project One Single End-->
+                        <!--Project One Single Start-->
+                        <div class="project-one__single">
+                            <div class="project-one__img">
+                                <iframe width="1013" height="570" src="https://www.youtube.com/embed/sdVo-y_F68M" title="How to start a home cleaning business in Dubai" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        </div>
+                        </div></div>
 
     </section>
 
@@ -1413,6 +1440,25 @@ From Airbnb apartments to luxury holiday homes, we ensure every space is perfect
                     <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                         <div class="footer-widget__column footer-widget__articles clearfix">
                             <h3 class="footer-widget__title">Contact Us</h3>
+                            <ul class="list-unstyled main-header-two__top-address-list" id="contactfooter" style="flex-direction: column; align-items: flex-start;">
+                                <li>
+                                    <div class="icon">
+                                        <span class="fa fa-phone-alt"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>+971 52 145 1348</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="fa fa-envelope"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><a href="mailto:brote@company.com">brote@company.com</a></p>
+                                    </div>
+                                </li>
+
+                            </ul>
                             <ul class="footer-widget__articles-list list-unstyled clearfix">
                                 <div class="site-footer__social">
 
