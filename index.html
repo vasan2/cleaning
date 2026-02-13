@@ -380,6 +380,129 @@ margin-left: 0px;
             width: 100%;
             height: 100%;
         }
+        .section2{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.section2 h1{
+    text-align:center;
+    font-size:42px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.section2 p.subtitle{
+    text-align:center;
+    font-size:18px;
+    margin-bottom:40px;
+    color:#666;
+}
+
+.discount-banner{
+    background:#0e37b1;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+    border-radius:20px;
+    font-size:26px;
+    font-weight:600;
+    margin-bottom:60px;
+}
+
+.content{
+    display:flex;
+    gap:60px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+/* Left Features */
+.features{
+    flex:1;
+}
+
+.features ul{
+    list-style:none;
+}
+
+.features li{
+    font-size:22px;
+    margin-bottom:25px;
+    display:flex;
+    align-items:center;
+}
+
+.features li::before{
+    content:"✔";
+    color:#0e37b1;
+    font-weight:bold;
+    margin-right:15px;
+    font-size:20px;
+}
+
+/* Pricing Cards */
+.pricing{
+    flex:1;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.card{
+    background:#eef2ff;   /* change here */
+    border:2px solid #0e37b1;
+    border-radius:20px;
+    padding:30px;
+    text-align:left;
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card h3{
+    font-size:22px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.card small{
+    display:block;
+    margin-bottom:20px;
+    color:#666;
+}
+
+.price{
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.price span{
+    font-size:16px;
+    font-weight:400;
+}
+
+.offpeak{
+    color:#0e37b1;
+    font-weight:600;
+    font-size:15px;
+}
+
+/* Responsive */
+@media(max-width:900px){
+    .content{
+        flex-direction:column;
+    }
+
+    .pricing{
+        grid-template-columns:1fr;
+    }
+}
     </style>
 
 </head>
@@ -575,7 +698,7 @@ margin-left: 0px;
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="main-slider-two__content">
-                                        <p class="main-slider-two__sub-title">We’re The No.1</p>
+                                        <p class="main-slider-two__sub-title">The No.1</p>
                                         <h2 class="main-slider-two__title">Holiday Homes <br>Cleaning Company <br>in Dubai
                                         </h2>
                                         <p class="main-slider-two__text" style="text-wrap: wrap;white-space: wrap;">
@@ -875,91 +998,63 @@ margin-left: 0px;
         </div>
     </section>
 
-    <section class="services-two">
-        <div class="services-two-bubble float-bob-x"
-            style="background-image: url(assets/images/shapes/services-two-bubble.png);"></div>
-        <div class="services-two-dot-1 float-bob-y">
-            <img src="assets/images/shapes/services-two-dot-1.png" alt="">
+    <section class="section2">
+    <h1>All Inclusive Packages</h1>
+    <p class="subtitle">
+        Our all inclusive packages includes everything you need for a guaranteed 5 stars experience and even more:
+    </p>
+
+    <div class="discount-banner">
+        Get 10% off every time you book off peak (after 16:00).
+    </div>
+
+    <div class="content">
+
+        <!-- Left Features -->
+        <div class="features">
+            <ul>
+                <li>Thorough Cleaning</li>
+                <li>Linen Hire Service</li>
+                <li>Welcome Packs</li>
+                <li>Stock Control</li>
+                <li>Reporting</li>
+            </ul>
         </div>
-        <div class="services-two-dot-2 float-bob-y">
-            <img src="assets/images/shapes/services-two-dot-2.png" alt="">
-        </div>
-        <div class="container">
-            <div class="section-title text-center">
-                <span class="section-title__tagline">What We’re Offering</span>
-                <h2 class="section-title__title">Providing the Best Services <br> for Our Customers</h2>
+
+        <!-- Pricing Cards -->
+        <div class="pricing">
+
+            <div class="card">
+                <h3>Studio</h3>
+                <small>(1 double bed)</small>
+                <div class="price">198 AED <span>+ VAT</span></div>
+                <div class="offpeak">OFF PEAK 178 AED + VAT</div>
             </div>
-            <div class="row">
-                <!--Services Two single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                    <div class="services-two__single">
-                        <div class="services-two__img-box">
-                            <div class="services-two__img">
-                                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/services-2-1.jpg"
-                                    alt="">
-                            </div>
-                            <div class="services-two__icon">
-                                <span class="icon-plumbing"></span>
-                            </div>
-                        </div>
-                        <div class="services-two__content">
-                            <h3 class="services-two__title"><a href="#">Plumbing Services</a>
-                            </h3>
-                            <p class="services-two__text">Our skilled plumbers handle leaks, repairs, and installations
-                                with precision.
-                                We ensure reliable solutions to keep your home running smoothly.</p>
-                            <a href="#" class="services-two__btn">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <!--Services Two single End-->
-                <!--Services Two single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
-                    <div class="services-two__single">
-                        <div class="services-two__img-box">
-                            <div class="services-two__img">
-                                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/services-2-2.jpg"
-                                    alt="">
-                            </div>
-                            <div class="services-two__icon">
-                                <span class="icon-laundry"></span>
-                            </div>
-                        </div>
-                        <div class="services-two__content">
-                            <h3 class="services-two__title"><a href="#">Laundry Services</a>
-                            </h3>
-                            <p class="services-two__text">Fresh, clean, and perfectly cared-for laundry every time.
-                                We save you time with efficient washing, drying, and folding services.</p>
-                            <a href="#" class="services-two__btn">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <!--Services Two single End-->
-                <!--Services Two single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
-                    <div class="services-two__single">
-                        <div class="services-two__img-box">
-                            <div class="services-two__img">
-                                <img src="https://bracketweb.com/brotewp/wp-content/uploads/2022/06/services-2-4.jpg"
-                                    alt="">
-                            </div>
-                            <div class="services-two__icon">
-                                <span class="icon-washing-plate"></span>
-                            </div>
-                        </div>
-                        <div class="services-two__content">
-                            <h3 class="services-two__title"><a href="#">Kitchen Cleaning</a>
-                            </h3>
-                            <p class="services-two__text">Deep cleaning for a hygienic and sparkling kitchen space.
-                                We remove grease, stains, and bacteria for a healthier home.</p>
-                            <a href="#" class="services-two__btn">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <!--Services Two single End-->
+
+            <div class="card">
+                <h3>1 Bedroom</h3>
+                <small>(1 double bed)</small>
+                <div class="price">220 AED <span>+ VAT</span></div>
+                <div class="offpeak">OFF PEAK 198 AED + VAT</div>
             </div>
+
+            <div class="card">
+                <h3>2 Bedrooms</h3>
+                <small>(2 double beds)</small>
+                <div class="price">320 AED <span>+ VAT</span></div>
+                <div class="offpeak">OFF PEAK 288 AED + VAT</div>
+            </div>
+
+            <div class="card">
+                <h3>3+ Bedrooms</h3>
+                <small>&nbsp;</small>
+                <div class="price">Contact for quote</div>
+            </div>
+
         </div>
-    </section>
+
+    </div>
+</section>
     <!--Services Two End-->
 
     <!--Brand One Start-->
