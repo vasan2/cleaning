@@ -24,6 +24,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-home:before {
+  content: "\e920"; /* use the correct code from IcoMoon */
+}
 .icon-whatsapp:before {
   content: "\e91e"; /* code may differ */
 }
