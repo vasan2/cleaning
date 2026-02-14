@@ -3492,6 +3492,8 @@ ul {
 .services-one__single:hover .services-one__overly-box {
   visibility: visible;
   opacity: 1;
+  background-size:cover;
+  height:388px;
 }
 
 /*--------------------------------------------------------------
