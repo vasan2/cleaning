@@ -247,14 +247,14 @@ margin-left: 0px;
         }
 
         /* IMAGE COMPARISON */
-        .before-after-container {
+        .before-after-container,.before-after-container2 {
             position: relative;
             aspect-ratio: 16 / 9;
             border-radius: 16px;
             overflow: hidden;
         }
 
-        .image {
+        .image,.image2 {
             position: relative;
             inset: 0;
             width: 100%;
@@ -263,11 +263,11 @@ margin-left: 0px;
         }
 
         /* Before image stays static */
-        .before-image {
+        .before-image,.before-image2 {
             position: static;
         }
 
-        .after-image-wrapper {
+        .after-image-wrapper,.after-image-wrapper2 {
             position: absolute;
             inset: 0;
             width: 50%;
@@ -276,7 +276,7 @@ margin-left: 0px;
         }
 
         /* SLIDER */
-        .slider {
+        .slider,.slider2 {
             position: absolute;
             inset: 0;
             appearance: none;
@@ -285,7 +285,7 @@ margin-left: 0px;
             z-index: 5;
         }
 
-        .slider::-webkit-slider-thumb {
+        .slider::-webkit-slider-thumb,.slider2::-webkit-slider-thumb {
             appearance: none;
             width: 52px;
             height: 52px;
@@ -295,7 +295,7 @@ margin-left: 0px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
-        .slider::-moz-range-thumb {
+        .slider::-moz-range-thumb,.slider2::-moz-range-thumb {
             width: 52px;
             height: 52px;
             background: #2563eb;
@@ -1094,6 +1094,33 @@ margin-left: 0px;
         </div>
     </section>
 
+    <section class="comparison-section">
+        <div class="comparison-card">
+            <div class="before-after-container2">
+
+                <!-- Before Image -->
+                <div class="after-image-wrapper2">
+                    <img src="assets/images/aef.jpeg"
+                        class="image2 after-image2" alt="After">
+                </div>
+                <img src="assets/images/bef.png"
+                    class="image2 before-image2" alt="Before">
+
+                <!-- After Image -->
+
+
+                <!-- Slider -->
+                <input type="range" min="0" max="100" value="50" class="slider2">
+
+                <!-- Labels -->
+                <div class="label after-label">After</div>
+                <div class="label before-label">Before</div>
+
+
+            </div>
+        </div>
+    </section>
+
     <section class="section2">
     <h1>All Inclusive Packages</h1>
     <p class="subtitle">
@@ -1772,6 +1799,14 @@ From Airbnb apartments to luxury holiday homes, we ensure every space is perfect
 
         slider.addEventListener('input', (e) => {
             afterImage.style.width = e.target.value + '%';
+        });
+    </script>
+    <script>
+        const slider2 = document.querySelector('.slider2');
+        const afterImage2 = document.querySelector('.after-image-wrapper2');
+
+        slider2.addEventListener('input', (e) => {
+            afterImage2.style.width = e.target.value + '%';
         });
     </script>
 </body>
