@@ -819,7 +819,7 @@ ul {
 .main-menu .main-menu__list>li:hover>a,
 .stricky-header .main-menu__list>li.current>a,
 .stricky-header .main-menu__list>li:hover>a {
-  color: var(--brote-white, #0e37b1);
+  color:  #0e37b1;
 }
 
 .main-menu .main-menu__list>li>ul,
