@@ -2098,7 +2098,8 @@ ul {
   right: 0;
   bottom: 0;
   background-repeat: no-repeat;
-  background-position: right center;
+  background-size: cover;
+  background-position: center center;
   -webkit-transform: scale(1);
   transform: scale(1);
   -webkit-transition: opacity 1500ms ease-in, -webkit-transform 7000ms ease;
