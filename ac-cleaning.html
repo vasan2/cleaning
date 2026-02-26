@@ -216,6 +216,112 @@
     height: auto;
     display: block;
 }
+
+
+
+
+
+    .trust-section {
+        padding: 80px 20px;
+        text-align: center;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .trust-section h2 {
+        font-size: 40px;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+
+    
+
+    .trust-section p.subtitle {
+        font-size: 16px;
+        color: #555;
+        max-width: 700px;
+        margin: 0 auto 60px;
+        line-height: 1.6;
+    }
+
+    .cards {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        background: #fff;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+        flex: 1 1 300px;
+        align-items: center;
+        max-width: 350px;
+        transition: all 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+    }
+
+    .icon-box {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 25px;
+        border-radius: 12px;
+        background: #eaf8fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon-box svg {
+        width: 40px;
+        height: 40px;
+        stroke: #0e37b1;
+        stroke-width: 2;
+        fill: none;
+    }
+
+    .card h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .card p {
+        font-size: 15px;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .card a {
+        text-decoration: none;
+        font-weight: 600;
+        color: #0e37b1;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: 0.3s;
+        text-align: center;
+    }
+
+    .card a:hover {
+        gap: 12px;
+    }
+
+    @media (max-width: 768px) {
+        .trust-section h2 {
+            font-size: 30px;
+        }
+    }
+
+
+
+
     </style>
 </head>
 
@@ -280,14 +386,14 @@
                                 <div class="main-menu-two__main-menu-box">
                                     <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                     <ul class="main-menu__list">
-                                        <li class=" current ">
+                                        <li >
                                             <a href="index.html">Home </a>
 
                                         </li>
                                         <li>
                                             <a href="about.html">About Us </a>
                                         </li>
-                                        <li class="dropdown">
+                                        <li class="dropdown current">
                                             <a href="#">Services </a>
                                             <ul>
 
@@ -336,22 +442,52 @@
         </div><!-- /.stricky-header -->
 
         <!--Page Header Start-->
-        <section class="page-header" style="margin-top:0px">
-            <div class="page-header-bg" style="background-image: url(assets/images/page-header-bg.jpg)">
-            </div>
-            <div class="page-header-bubble"><img src="assets/images/shapes/page-header-bubble.png" alt=""></div>
-            <div class="container">
-                <div class="page-header__inner">
-                    <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="index.html">Home</a></li>
-                        <li><span>/</span></li>
-                        <li><a href="services-page-1.html">Services</a></li>
-                        <li><span>/</span></li>
-                        <li>Plumbing Service</li>
-                    </ul>
-                    <h2>Plumbing Service</h2>
+        <section class="main-slider-three clearfix">
+            <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
+                "effect": "fade",
+                "pagination": {
+                "el": "#main-slider-pagination",
+                "type": "bullets",
+                "clickable": true
+                },
+                "navigation": {
+                "nextEl": "#main-slider__swiper-button-next",
+                "prevEl": "#main-slider__swiper-button-prev"
+                },
+                "autoplay": {
+                "delay": 5000
+                }}'>
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="image-layer-three"
+                            style="background-image: url(https://aerofresh.ae/wp-content/uploads/2024/11/banner2.jpg);"></div>
+                        <!-- /.image-layer -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-7">
+                                    <div class="main-slider-three__content">
+                                        <h2 class="main-slider-three__title">AC Duct Cleaning That Delivers Fresh, Healthy Air</h2>
+                                        <p class="main-slider-three__text">Say goodbye to dust, allergens, and musty odors — our expert team restores your ducts for cleaner air and peak AC performance.</p>
+                                        <div class="main-slider-three__btn-box">
+                                            <a href="tel:+971 52 145 1348" class="thm-btn main-slider-three__btn" style="margin-top:20px;padding: 15px;">Call Us Now<i
+                                    class="fa fa-angle-right"></i></a>
+                                    <a href="https://wa.link/vqlzoa" class="thm-btn main-slider-three__btn" style="margin-top:20px;padding: 15px;">Whatsapp Us Now<i
+                                    class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
+
+                <!-- If we need navigation buttons -->
+                
+
             </div>
+            
         </section>
         <!--Page Header End-->
 
@@ -400,13 +536,14 @@
                 </div>
             </div>
         </section>
-        <section class="process">
+        <section class="process" style="margin-top: 50px;">
             <div class="container">
                 <div class="section-title text-center">
                    
                     <h2 class="section-title__title">Why Our AC Duct Cleaning<br> Stands Out</h2>
                 </div>
-                <div class="process__inner">
+                <div class="process__inner wow slideInRight" data-wow-delay="100ms"
+                                data-wow-duration="2500ms" >
                     <div class="process-line">
                         <img src="assets/images/shapes/process-line.png" alt="">
                     </div>
@@ -491,7 +628,8 @@
                     
                 </div>
 
-                <div class="process__inner">
+                <div class="process__inner wow slideInLeft" data-wow-delay="100ms"
+                                data-wow-duration="2500ms" style="margin-top: 50px;">
                     <div class="process-line">
                         <img src="assets/images/shapes/process-line.png" alt="">
                     </div>
@@ -655,6 +793,65 @@
         </video>
     </div>
 </section>
+<section class="trust-section">
+    <h2>Why Homeowners <span>Trust Aerofresh</span></h2>
+    <p class="subtitle">
+        We combine expert care, reliable service, and proven results to deliver a cleaner,
+        healthier indoor environment every time.
+    </p>
+
+    <div class="cards">
+        
+        <div class="card">
+            <div class="icon-box">
+                <!-- Briefcase Icon -->
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="7" width="18" height="13" rx="2"></rect>
+                    <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                </svg>
+            </div>
+            <h3>Experienced Professionals</h3>
+            <p>
+                Our skilled team uses proven techniques and tools to deliver
+                top-quality AC cleaning every time.
+            </p>
+            <a href="#">Get A Quote →</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-box">
+                <!-- Rocket Icon -->
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 13l6-6 7 7-6 6-7-7z"></path>
+                    <circle cx="15" cy="9" r="2"></circle>
+                </svg>
+            </div>
+            <h3>Fast & Reliable Service</h3>
+            <p>
+                We show up on time, get the job done efficiently,
+                and leave your space fresher than ever.
+            </p>
+            <a href="#">Get A Quote →</a>
+        </div>
+
+        <div class="card">
+            <div class="icon-box">
+                <!-- Shield Icon -->
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"></path>
+                    <path d="M9 12l2 2 4-4"></path>
+                </svg>
+            </div>
+            <h3>Health-Focused Solutions</h3>
+            <p>
+                We prioritize your well-being by eliminating dust,
+                allergens, and bacteria from your AC system.
+            </p>
+            <a href="#">Get A Quote →</a>
+        </div>
+
+    </div>
+</section>
        <section class="cta-one">
             <div class="cta-one-bg-bg">
                 <div class="cta-one-bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
@@ -674,7 +871,7 @@
             </div>
         </section>
 
-        <section class="testimonial-section">
+        <section class="testimonial-section" style="margin-top: 50px;">
     <h2 style="color:white">What Our Happy Customers Say</h2>
     <p>
         Hear from real customers who’ve experienced the difference of our professional AC duct cleaning 
